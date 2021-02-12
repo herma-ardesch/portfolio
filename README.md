@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Authentic Performance versus Modern Performance of music by Carl Philipp Emanuel Bach #
 
 ## Portfolio Herma Ardesch ##
