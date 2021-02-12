@@ -1,5 +1,5 @@
 ---
-title: "Authentic vs Modern Performance of Music by C.Ph.E. Bach"
+title: "Authentic versus Modern Performances of Music by Carl Philipp Emanuel Bach"
 author: "Herma Ardesch"
 date: "12-2-2021"
 output: html_document
