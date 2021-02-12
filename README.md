@@ -1,4 +1,4 @@
-# Authentic Performance verses Modern Performance 
+# Authentic Performance versus Modern Performance 
 # of music by Carl Philipp Emanuel Bach
 ## Portfolio Herma Ardesch
 Raised in an environment in which Bach's music was predominant, I learned to play the flute and developed a preference for the music of Carl Philipp Emanuel Bach (1714-1788) and his ‘Empfindsame Stil’ with many unexpected melodic and harmonic turns to symbolize mood swings. My corpus consists of selected music, e.g. flute concertos, symphonies and cello concertos. 
