@@ -29,7 +29,7 @@ labs(title = "Differences in tempo of authentic vs modern performances", size = 
 ```
 ##
 
-The two histograms show the tempo variances between authentic and modern performances of music by Carl Philipp Emanuel Bach, each consisting of 45 identical movements. The histogram on the left shows a more even pattern with less variances, whereas the modern performances are more outspoken in tempo: fast allegros are played faster and slow adagios are played slower than in the authentic performances.
+The two histograms show the tempo variances between authentic and modern performances of music by Carl Philipp Emanuel Bach, each playlist consisting of 45 identical movements. The histogram on the left shows a more even pattern with less variances, whereas the modern performances are more outspoken in tempo: generally spoken fast allegros are played faster in the modern performances.
 
 
 ```{r}
