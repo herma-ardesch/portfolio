@@ -22,8 +22,16 @@ CPE <-
 CPE %>% ggplot(aes(x = tempo)) + 
  geom_histogram(binwidth = 10, color = "grey80", fill = "grey60") +
   facet_wrap(~category)
+
+
+# The two histograms show the tempo variances between authentic and modern performances of music by Carl Philipp Emanuel Bach, based on 45 tracks both. The histogram on the left shows a more even pattern with less variances, whereas the modern performances are more outspoken in tempo: fast allegros are played faster and slow adagios are played slower than in the authentic performances.
+
+```
+```{r}
 CPE %>% ggplot(aes(x = tempo, y = instrumentalness, color = category)) +
   geom_jitter() + geom_smooth()
 
+
+# This scatter plot shows the tempo vs instrumentalness of both groups, authentic and modern. The mean line of the authentic performances has a lower instrumentalness, which makes sense, because authentic instruments are tuned differently and therefore play in a lower pitch.
 ```
 
