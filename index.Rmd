@@ -7,7 +7,7 @@ output: html_document
 
 ##
 
-This portfolio is designed to show statistical data on the research question **Is it possible to detect differences between authentic and modern performance in the music of C.Ph.E. Bach, using the Spotify API?** To give a first impression, the next graphs are added.
+This portfolio is designed to show statistical data on the research question **Is it possible to detect differences between authentic and modern performances in the music of C.Ph.E. Bach, using the Spotify API?** To give a first impression, the next graphs are added.
 
 ```{r}
 library(tidyverse)
@@ -40,4 +40,4 @@ labs(title = "Differences in timbre of authentic vs modern performances", size =
 
 ```
 
-This scatter plot shows the acousticness vs tempo of both groups, authentic and modern. The mean line of the authentic performances suggests a lower acousticness, which makes sense, because authentic instruments usually have a different timbre, compared to that of modern instruments, which also have a larger dynamic range.
+This scatter plot shows the acousticness vs tempo of both groups, authentic and modern. The mean line of the authentic performances suggests a lower acousticness, which makes sense, because authentic instruments usually have a warmer, milder timbre, compared to that of modern instruments, the last ones also having a larger dynamic range.
