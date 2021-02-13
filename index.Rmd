@@ -5,13 +5,14 @@ date: "13-2-2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+##
+
+This portfolio is designed to show statistical data on the research question **Is it possible to detect differences between authentic and modern performance in the music of C.Ph.E. Bach, using the Spotify API?** To give a first impression, the next graphs are added.
 
 ```{r}
 library(tidyverse)
 library(spotifyr)
+
 CPE_aut <- get_playlist_audio_features("", "2PmIxISPPF4ymvoa3bvCrh")
 CPE_mod <- get_playlist_audio_features("", "0F83MSl8bV2AxL2JNDTGew")
 CPE <-
@@ -23,15 +24,17 @@ CPE %>% ggplot(aes(x = tempo)) +
  geom_histogram(binwidth = 10, color = "grey80", fill = "grey60") +
   facet_wrap(~category)
 
-
-# The two histograms show the tempo variances between authentic and modern performances of music by Carl Philipp Emanuel Bach, based on 45 identical movements both. The histogram on the left shows a more even pattern with less variances, whereas the modern performances are more outspoken in tempo: fast allegros are played faster and slow adagios are played slower than in the authentic performances.
-
 ```
+##
+
+The two histograms show the tempo variances between authentic and modern performances of music by Carl Philipp Emanuel Bach, each consisting of 45 identical movements. The histogram on the left shows a more even pattern with less variances, whereas the modern performances are more outspoken in tempo: fast allegros are played faster and slow adagios are played slower than in the authentic performances.
+
+
 ```{r}
-CPE %>% ggplot(aes(x = tempo, y = instrumentalness, color = category)) +
+
+CPE %>% ggplot(aes(x = tempo, y = acousticness, color = category)) +
   geom_jitter() + geom_smooth()
 
-
-# This scatter plot shows the tempo vs instrumentalness of both groups, authentic and modern. The mean line of the authentic performances has a lower instrumentalness, which makes sense, because authentic instruments are tuned differently and therefore play in a lower pitch.
 ```
 
+This scatter plot shows the acousticness vs tempo of both groups, authentic and modern. The mean line of the authentic performances suggests a lower acousticness, which makes sense, because authentic instruments usually have a different timbre, compared to that of modern instruments, which also have a larger dynamic range.
