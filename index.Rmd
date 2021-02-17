@@ -9,6 +9,8 @@ output: html_document
 
 This portfolio is designed to show statistical data on the research question: *Is it possible to detect differences between authentic and modern performances in the music of C.Ph.E. Bach, using the Spotify API?* To give a first impression, the next graphs are added.
 
+### Tempo
+
 ```{r}
 
 library(tidyverse)
@@ -29,10 +31,11 @@ labs(title = "Differences in tempo of authentic vs modern performances", size = 
 
 ```
 
-### Tempo
+
 
 The two histograms show the tempo variances between authentic and modern performances of music by Carl Philipp Emanuel Bach, each playlist consisting of 45 identical movements. The histogram on the left shows a more even pattern with less variances, whereas the modern performances are more outspoken in tempo: generally speaking most fast allegros are played faster and most slow movement slower in the modern performances.
 
+### Add title
 
 ```{r}
 
@@ -41,6 +44,6 @@ CPE %>% ggplot(aes(x = tempo, y = acousticness, color = category)) +
 labs(title = "Differences in timbre of authentic vs modern performances", size = 16, caption = "Sources: Gapminder & Spotify")
 
 ```
-### Add title
+
 
 This scatter plot shows the acousticness vs tempo of both groups, authentic and modern. The mean line of the authentic performances suggests a lower acousticness, which makes sense, because authentic instruments usually have a warmer, milder timbre, compared to that of modern instruments, the last ones also having a larger dynamic range.
