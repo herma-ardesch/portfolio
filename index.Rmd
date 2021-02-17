@@ -1,13 +1,16 @@
 ---
-title: "CPE Bach"
+title: "C.P.E. Bach"
 author: "Herma Ardesch"
 date: "13-2-2021"
 output: html_document
 ---
 
-#### This portfolio is designed to show statistical data on the research question: *Is it possible to detect differences between authentic and modern performances in the music of C.Ph.E. Bach, using the Spotify API?* To give a first impression, the next graphs are added.
+## Authentic vs. Modern Performances
+
+This portfolio is designed to show statistical data on the research question: *Is it possible to detect differences between authentic and modern performances in the music of C.Ph.E. Bach, using the Spotify API?* To give a first impression, the next graphs are added.
 
 ```{r}
+
 library(tidyverse)
 library(spotifyr)
 
@@ -21,21 +24,23 @@ CPE <-
 CPE %>% ggplot(aes(x = tempo)) + 
  geom_histogram(binwidth = 10, color = "grey80", fill = "grey60") +
   facet_wrap(~category) +
-labs(title = "Differences in tempo of authentic vs modern performances", size = 16, caption = "Source: gapminder")
+labs(title = "Differences in tempo of authentic vs modern performances", size = 16, caption = "Sources: Gapminder & Spotify")
 
 
 ```
 
+### Tempo
 
-#### The two histograms show the tempo variances between authentic and modern performances of music by Carl Philipp Emanuel Bach, each playlist consisting of 45 identical movements. The histogram on the left shows a more even pattern with less variances, whereas the modern performances are more outspoken in tempo: generally speaking most fast allegros are played faster and most slow movement slower in the modern performances.
+The two histograms show the tempo variances between authentic and modern performances of music by Carl Philipp Emanuel Bach, each playlist consisting of 45 identical movements. The histogram on the left shows a more even pattern with less variances, whereas the modern performances are more outspoken in tempo: generally speaking most fast allegros are played faster and most slow movement slower in the modern performances.
 
 
 ```{r}
 
 CPE %>% ggplot(aes(x = tempo, y = acousticness, color = category)) +
   geom_jitter() + geom_smooth() +
-labs(title = "Differences in timbre of authentic vs modern performances", size = 16, caption = "Source: gapminder")
+labs(title = "Differences in timbre of authentic vs modern performances", size = 16, caption = "Sources: Gapminder & Spotify")
 
 ```
+### Add title
 
-#### This scatter plot shows the acousticness vs tempo of both groups, authentic and modern. The mean line of the authentic performances suggests a lower acousticness, which makes sense, because authentic instruments usually have a warmer, milder timbre, compared to that of modern instruments, the last ones also having a larger dynamic range.
+This scatter plot shows the acousticness vs tempo of both groups, authentic and modern. The mean line of the authentic performances suggests a lower acousticness, which makes sense, because authentic instruments usually have a warmer, milder timbre, compared to that of modern instruments, the last ones also having a larger dynamic range.
