@@ -6,14 +6,28 @@ output:
   flexdashboard::flex_dashboard:
    storyboard: true
    theme: flatly
+   vertical layout: fill
 ---
 
-## Authentic vs. Modern Performances
+## Authentic vs. Modern Performances of C.P.E. Bach's music
 
-This portfolio is designed to show statistical data on the research question: *Is it possible to detect differences between authentic and modern performances in the music of C.Ph.E. Bach, using the Spotify API?* To give a first impression, the next graphs are added.
+### **Why C.P.E. Bach?** Discover more about the background of this portfolio...
 
-### Tempo
+```{r}
 
+```
+
+> **Raised in an environment in which Bach's music was predominant, I learned to play the flute and developed a preference for the music of Carl Philipp Emanuel Bach (1714-1788). His ‘Empfindsame Stil’ with many unexpected melodic and harmonic turns to symbolize mood swings was very appealing to me. This corpus consists of some of his flute concertos, cello concertos, harpsichord sonatas and symphonies.** 
+
+I would like to answer the question **Is it possible to detect differences between authentic and modern performance in the music of C.Ph.E. Bach, using the Spotify API?** I expect differences in tempo, interpretation, instrumental sound, pitch, valence and energy between authentic and modern performance practices. Of course I need to give extra attention to the pitch of both groups, since authentic instruments usually play in a different tuning, resulting in a lower pitch. My objective it so make these differences **visible** as well as audible.
+
+Listening to his Flute Concerto in A minor, Wq 166 in the authentic performance of Konrad Hünteler with the Amsterdam Baroque Orchestra (Ton Koopman) and the modern performance of Emmanuel Pahud with the Kammerakademie Potsdam (Trevor Pinnock), you can hear the diffenrences. Both performances take a different tempo, energy level and pitch and the wooden baroque traverso has quite a different sound character, compared to the modern silver or golden Böhm-flute. 
+
+However, I expect that since the inception of the authentic performance practice over half a century ago, both authentic and modern performances have grown closer to each other, because of improved replicas of authentic instruments on the one hand and a greater versatility of instrumentalists playing both authentic and modern versions of their instrument.
+
+### Tempo differences
+
+> ** In these histograms you see some tempo differences.**
 ```{r}
 
 library(tidyverse)
@@ -30,15 +44,20 @@ CPE <-
 tempo_gg <- CPE %>% ggplot(aes(x = tempo)) + 
  geom_histogram(binwidth = 10, color = "grey80", fill = "grey60") +
   facet_wrap(~category) +
-labs(title = "Differences in tempo of authentic vs modern performances", caption = "Source: Spotify API")
+labs(title = "Differences in tempo of authentic vs modern performances")
 
 ggplotly(tempo_gg)
 
 ```
 
+> Source: Spotify API
 
 
+***
+
+This portfolio is designed to show statistical data on the research question: *Is it possible to detect differences between authentic and modern performances in the music of C.Ph.E. Bach, using the Spotify API?* To give a first impression, the next graphs are added.
 The two histograms show the tempo variances between authentic and modern performances of music by Carl Philipp Emanuel Bach, each playlist consisting of 45 identical movements. The histogram on the left shows a more even pattern with less variances, whereas the modern performances are more outspoken in tempo. TO DO: explain peak at 80!
+
 
 ### Add title
 
