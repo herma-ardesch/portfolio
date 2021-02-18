@@ -63,9 +63,9 @@ ggplotly(tempo_gg)
 
 *Moving your cursor over the top right side of the histograms will show you an interactive menu. You can zoom in on the 'bins' to see how often each tempo is used.*
 
-The overall tempo of authentic performances ranges from 62 to 176 BPM, the modern performances ranges a little less far in the higher tempo: from 62 to 168 BPM. However, as you see on the histogram, the tempo of the authentic performances has a more even, a 'normal' distribution, whereas that of the modern performances shows a high peak around 80 BPM - it is 'skewed'. 
+The overall tempo of authentic performances in this corpus ranges from 62 to 176 BPM, the tempo of modern performances had a slightly lower range: from 62 to 168 BPM. However, as you see on the histogram, the tempo of the authentic performances has a more even, 'normal' distribution, whereas that of the modern performances shows a high peak around 80 BPM - it is 'skewed'. 
 
-As much as 11 of the total of 45 movements are played in that same tempo in the modern performances, against 4 of that same tempo in the authentic performances. Based on the comparison of these 45 tracks, you could say that authentic performances show a greater variety in tempo than modern performances.
+As much as 11 of the total of 45 movements are played in that same tempo around 80 BPM in the modern performances, against 4 in the authentic performances. Based on the comparison of these 45 tracks, you could say that authentic performances show a greater variety in tempo than modern performances.
 
 If you scroll over the graph, you can see exactly how many movements are played in each tempo of each performance.
 
