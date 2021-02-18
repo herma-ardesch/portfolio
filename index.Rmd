@@ -2,7 +2,10 @@
 title: "C.P.E. Bach"
 author: "Herma Ardesch"
 date: "13-2-2021"
-output: html_document
+output: 
+  flexdashboard::flex_dashboard:
+   storyboard: true
+   theme: flatly
 ---
 
 ## Authentic vs. Modern Performances
@@ -15,6 +18,7 @@ This portfolio is designed to show statistical data on the research question: *I
 
 library(tidyverse)
 library(spotifyr)
+library(plotly)
 
 CPE_aut <- get_playlist_audio_features("", "2PmIxISPPF4ymvoa3bvCrh")
 CPE_mod <- get_playlist_audio_features("", "0F83MSl8bV2AxL2JNDTGew")
@@ -23,11 +27,12 @@ CPE <-
     CPE_aut %>% mutate(category = "authentic"),
     CPE_mod %>% mutate(category = "modern")
   )
-CPE %>% ggplot(aes(x = tempo)) + 
+tempo_gg <- CPE %>% ggplot(aes(x = tempo)) + 
  geom_histogram(binwidth = 10, color = "grey80", fill = "grey60") +
   facet_wrap(~category) +
 labs(title = "Differences in tempo of authentic vs modern performances", caption = "Source: Spotify API")
 
+ggplotly(tempo_gg)
 
 ```
 
