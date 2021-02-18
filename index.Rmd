@@ -21,7 +21,7 @@ output:
 
 #### **The music of Carl Philipp Emanuel Bach** ####
 
-Raised in an environment in which Bach's music was predominant, I learned to play the flute and developed a preference for the music of Carl Philipp Emanuel Bach (1714_1788). His 'Empfindsame Stil' with many unexpected melodic, harmonic and thythmic turns to symbolize mood swings was very appealing to me. This corpus consists of his flute concertos, cello concertos, some of his harpsichord sonatas and his four symphonies.
+Raised in an environment in which Bach's music was predominant, I learned to play the flute and developed a preference for the music of Carl Philipp Emanuel Bach (1714-1788). His 'Empfindsame Stil' with many unexpected melodic, harmonic and rhythmic turns to symbolize mood swings was very appealing to me. This corpus consists of his flute concertos, cello concertos, some of his harpsichord sonatas and his four symphonies.
 
 I would like to answer the question **Is it possible to detect differences between authentic and modern performance in the music of C.Ph.E. Bach, using the Spotify API?** I expect differences in tempo, interpretation, instrumental sound, pitch, valence and energy between authentic and modern performance practices. Of course I need to give extra attention to the pitch of both groups, since authentic instruments usually play in a different tuning, resulting in a lower pitch. My objective it to make these differences visible as well as audible.
 
