@@ -11,7 +11,7 @@ output:
 
 ## Authentic vs. Modern Performances of C.P.E. Bach's music
 
-### **Why C.P.E. Bach?** Discover more about the background of this portfolio...
+### **Why C.P.E. Bach?** Discover more about the background of this portfolio.
 
 ```{r}
 
@@ -30,7 +30,7 @@ Listening to his Flute Concerto in A minor, Wq 166 in the authentic performance 
 However, I expect that since the inception of the authentic performance practice over half a century ago, both authentic and modern performances have grown closer to each other, because of improved replicas of authentic instruments on the one hand and a greater versatility of instrumentalists playing both authentic and modern versions of their instrument.
  
 
-### **See what you hear?** Have a look at a visualisation of **TEMPO** differences**...
+### **See what you hear? - 1** Have a look at an interactive visualisation and analysis of **TEMPO differences** between authentic and modern performances.
 
 ```{r}
 
@@ -46,10 +46,11 @@ CPE <-
     CPE_mod %>% mutate(category = "Modern")
   )
 tempo_gg <- CPE %>% ggplot(aes(x = tempo)) + 
- geom_histogram(binwidth = 10, color = "grey80", fill = "deepskyblue4") +
+ geom_histogram(binwidth = 8, color = "grey80", fill = "deepskyblue4") +
   facet_wrap(~category) +
   
-labs(title = "Differences in tempo of authentic vs modern performances", size = 16)
+labs(title = "Differences in tempo of authentic vs modern performances", size = 16
+)
 
 
 ggplotly(tempo_gg)
@@ -60,19 +61,21 @@ ggplotly(tempo_gg)
 
 *** 
 
-Moving your cursor over the top of the histograms will show you an interactive menu. You can zoom in on the bins to see how often each tempo bin is used.
+*Moving your cursor over the top of the histograms will show you an interactive menu. You can zoom in on the 'bins' to see how often each tempo is used.*
 
-### **See what you hear?** A first impression of **TIMBRE differences**...
+### **See what you hear? - 2** A first impression of **LOUDNESS differences**, including analysis.
 
 ```{r}
 
-CPE %>% ggplot(aes(x = tempo, y = acousticness, color = category)) +
+CPE %>% ggplot(aes(x = tempo, y = loudness, color = category)) +
   geom_jitter() + geom_smooth() +
-labs(title = "Differences in timbre of authentic vs modern performances")
+labs(title = "Differences in loudness of authentic vs modern performances")
+
+
 ```
 
 > Source: Spotify API
 
 ***
 
-This scatter plot shows the acousticness vs tempo of both groups, authentic and modern. TO DO: change variables!
+This scatter plot shows the loudness vs tempo of both groups, authentic and modern. TO DO: change variables!
