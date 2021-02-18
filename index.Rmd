@@ -48,7 +48,9 @@ CPE <-
 tempo_gg <- CPE %>% ggplot(aes(x = tempo)) + 
  geom_histogram(binwidth = 10, color = "grey80", fill = "deepskyblue4") +
   facet_wrap(~category) +
+  
 labs(title = "Differences in tempo of authentic vs modern performances", size = 16)
+
 
 ggplotly(tempo_gg)
 
