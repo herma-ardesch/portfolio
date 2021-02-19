@@ -36,6 +36,7 @@ However, I expect that since the inception of the authentic performance practice
 
 library(tidyverse)
 library(spotifyr)
+library(compmus)
 library(plotly)
 
 CPE_aut <- get_playlist_audio_features("", "2PmIxISPPF4ymvoa3bvCrh")
@@ -84,11 +85,63 @@ ggplotly(mood_gg)
 
 ***
 
-Here we see the valence vs. energy values, resulting in moods per track. Both authentic and modern performances range in mood from the lower left 'sad' quadrant to the middle of the 'calm' quadrant. This genre will never reach the upper right 'happy' quadrant (energy level 0.5 - 1.0), although its valence (negative - positive) uses the full range.
+Here we see the valence vs. energy values, resulting in moods per track. Both authentic and modern performances range in mood from the lower left 'sad' quadrant to the lower part of the 'calm' quadrant. This genre will never reach the upper right 'happy' quadrant (energy level 0.5 - 1.0), although its valence (negative - positive) uses the full range.
 
 The authentic performances show a slightly higher energy level, except for the beginning and the middle part. Spotify calculates the energy level using a mix of features and mentions that *'energetic tracks feel fast, loud and noisy'*. The lines crossing in the middle may be caused by the strong preference of tempos around 80 BPM in the modern performances (TO DO: add link to tempo).
 
 Two outliers in this plot show a high valence and energy level in the two fast movements of the Keyboard Sonata in A-Minor, I Allegro and III Allegro di Molto, played on harpsichord by Gabor Antalffi. Listening to it, he plays them vigorously. But compared to the modern version of these movements played by Ana-Marija Markovina on the piano, the sound of harpsichord vs. piano certainly also plays a role in the Spotify high scores. The harpsichord certainly feels relatively faster, louder and noisier!
+
+
+### **Dynamic Time-Warping technique** to easily compare a Concerto in the version for Flute to the same Concerto played on Cello in a much slower tempo. 
+
+```{r}
+
+hunteler_Wq168II <-
+  get_tidy_audio_analysis("05swCwLFtyRnOZdR25nP0d") %>%
+  select(segments) %>%
+  unnest(segments) %>%
+  select(start, duration, pitches)
+  
+suzuki_wq172II <- 
+  get_tidy_audio_analysis("6fdcIHXZb7WoUKjlsREe36") %>%
+  select(segments) %>%
+  unnest(segments) %>%
+  select(start, duration, pitches)
+```
+
+
+```{r}
+compmus_long_distance(
+  hunteler_Wq168II %>% mutate(pitches = map(pitches, compmus_normalise, "manhattan")),
+  suzuki_wq172II %>% mutate(pitches = map(pitches, compmus_normalise, "manhattan")),
+  feature = pitches,
+  method = "aitchison"
+) %>%
+  ggplot(
+    aes(
+      x = xstart + xduration / 2,
+      width = xduration,
+      y = ystart + yduration / 2,
+      height = yduration,
+      fill = d
+    )
+  ) +
+  geom_tile() +
+  coord_equal() +
+  labs(x = "Konrad Hünteler and Amsterdam Baroque", y = "Hidemi Suzuki and Bach Collegium Japan") +
+  theme_minimal() +
+  scale_fill_viridis_c(guide = NULL) +
+  labs(title = "Aligning two performances played in a different tempo")
+```
+
+
+***
+
+C.P.E. Bach's Flute Concerto in A, Wq 168, is also available as a Cello Concerto, Wq 172. This chromagram shows the second movement, a Largo con Sordini, Mesto, so a slow piece. They are performed by Amsterdam Baroque with Konrad Hünteler on flute and by the Bach Collegium Japan with Hidemi Suzuki on cello. Amsterdam Baroque plays this movement in 6:43 minutes - the Bach Collegium Japan takes a much slower tempo: 8:33 minutes. 
+
+This chromagram is made using the Dynamic Time-Warping technique to align both versions: a great help if you want to compare various performances. You can see by the longer y-axis that the Bach Collegium Japan plays much slower, resulting in a rectangular chromagram.
+
+From the bottom left corner to the upper right corner you see a line, showing the warping path. A straight line shows that both movements are well aligned. When you look close, you see a small discontinuation of the line towards the end of the movement. This is caused by a cadenza: the flute plays a short cadenza of 16 seconds and the cello plays a more extensive cadenza of 32 seconds - there is no alignment possible here. 
 
 ### **Conclusions - TO DO: adjust title depending on other visualisations**.
 
