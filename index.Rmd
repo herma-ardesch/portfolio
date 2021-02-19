@@ -1,7 +1,7 @@
 ---
 title: "C.P.E. Bach"
 author: "Herma Ardesch"
-date: "13-2-2021"
+date: "19-2-2021"
 output: 
   flexdashboard::flex_dashboard:
    storyboard: true
@@ -30,7 +30,7 @@ Listening to his Flute Concerto in A minor, Wq 166 in the authentic performance 
 However, I expect that since the inception of the authentic performance practice over half a century ago, both authentic and modern performances have grown closer to each other, because of improved replicas of authentic instruments on the one hand and a greater versatility of instrumentalists playing both authentic and modern versions of their instrument.
  
 
-### Authentic performances show a greater diversity in **tempo** than modern performances. 
+### Authentic performances show a greater **diversity in tempo** than modern performances. 
 
 ```{r}
 
@@ -61,22 +61,22 @@ ggplotly(tempo_gg)
 
 *** 
 
-*Moving your cursor over the top right side of the histograms will show you an interactive menu. You can zoom in on the 'bins' to see how often each tempo is used.*
+*Moving your cursor over the top right side of the histograms will show you an interactive menu. You can zoom in on the bins to see how often each tempo is used.*
 
 The overall tempo of authentic performances in this corpus ranges from 62 to 176 BPM, the tempo of modern performances had a slightly lower range: from 62 to 168 BPM. However, as you see on the histogram, the tempo of the authentic performances has a more even, normal distribution, whereas that of the modern performances shows a high peak around 80 BPM. 
 
 As much as 11 of the total of 45 movements are played in that same tempo of around 80 BPM in the modern performances, against 4 in the authentic performances. Based on the comparison of these 45 tracks, you could say that authentic performances show a greater variety in tempo than modern performances.
 
-If you scroll over the graph, you can see exactly how many movements are played in each tempo of each performance.
 
-### Authentic performances show a greater diversity in **tempo** than modern performances. 
+### **Spotify mood features** show that authentic performances can sound **'fast, loud and noisy!'**. 
 
 ```{r}
 
-CPE %>% ggplot(aes(x = tempo, y = loudness, color = category)) +
+mood_gg <- CPE %>% ggplot(aes(x = valence, y = energy, color = category)) +
   geom_jitter() + geom_smooth() +
 labs(title = "Differences in loudness of authentic vs modern performances")
 
+ggplotly(mood_gg)
 
 ```
 
@@ -84,4 +84,8 @@ labs(title = "Differences in loudness of authentic vs modern performances")
 
 ***
 
-This scatter plot shows the loudness vs tempo of both groups, authentic and modern. TO DO: change variables!
+Here we see the valence vs. energy values, resulting in moods per track. Both authentic and modern performances range in mood from the lower left 'sad' quadrant, to low in the upper right 'happy' quadrant. This makes sense: The corpus consists of slow (sad) and fast (happy) movements.
+
+The authentic performances show a slightly higher energy level, except for the beginning and the middle part. Spotify calculates the energy level using a mix of features and mentions that *'energetic tracks feel fast, loud and noisy'*. The lines crossing in the middle may be caused by the strong preference of tempos around 80 BPM in the modern performances, whereas the authentic performances use a variety of slower tempos.
+
+Two outliers in this plot show a high valence and energy level in the two fast movements of the Keyboard Sonata in A-Minor, I Allegro and III Allegro di Molto, played on harpsichord by Gabor Antalffi. Listening to it, he plays them vigorously. But compared to the modern version of these movements played by Ana-Marija Markovina on the piano, the sound of harpsichord vs. piano certainly also plays a role in the Spotify high scores. The harpsichord certainly feel faster, louder and noisier!
