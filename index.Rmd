@@ -114,8 +114,8 @@ suzuki_wq172II <-
 
 ```{r}
 compmus_long_distance(
-  hunteler_Wq168II %>% mutate(pitches = map(pitches, compmus_normalise, "manhattan")),
   suzuki_wq172II %>% mutate(pitches = map(pitches, compmus_normalise, "manhattan")),
+  hunteler_Wq168II %>% mutate(pitches = map(pitches, compmus_normalise, "manhattan")),
   feature = pitches,
   method = "aitchison"
 ) %>%
@@ -130,7 +130,7 @@ compmus_long_distance(
   ) +
   geom_tile() +
   coord_equal() +
-  labs(x = "Konrad Hünteler and Amsterdam Baroque", y = "Hidemi Suzuki and Bach Collegium Japan") +
+  labs(x = "Hidemi Suzuki and Bach Collegium Japan", y = "Konrad Hünteler and Amsterdam Baroque") +
   theme_minimal() +
   scale_fill_viridis_c(guide = NULL) +
   labs(title = "Aligning two performances played in a different tempo")
