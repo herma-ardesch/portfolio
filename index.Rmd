@@ -141,7 +141,7 @@ compmus_long_distance(
 
 C.P.E. Bach's Flute Concerto in A, Wq 168, is also available as a Cello Concerto, Wq 172. This chromagram shows the second movement, a Largo con Sordini, Mesto, so a slow piece. They are performed by Amsterdam Baroque with Konrad Hünteler on flute and by the Bach Collegium Japan with Hidemi Suzuki on cello. Amsterdam Baroque plays this movement in 6:43 minutes - the Bach Collegium Japan takes a much slower tempo: 8:33 minutes. 
 
-This chromagram is made using the Dynamic Time-Warping technique to align both versions: a great help if you want to compare various performances. You can see by the longer y-axis that the Bach Collegium Japan plays much slower, resulting in a rectangular chromagram.
+This chromagram is made using the Dynamic Time-Warping technique to align both versions: a great help if you want to compare various performances. You can see by the longer x-axis that the Bach Collegium Japan plays much slower, resulting in a rectangular chromagram.
 
 From the bottom left corner to the upper right corner you see a line, showing the warping path. A straight line shows that both movements are well aligned. When you look close, you see a small discontinuation of the line towards the end of the movement. This is caused by a cadenza: the flute plays a short cadenza of 16 seconds and the cello plays a more extensive cadenza of 32 seconds - there is no alignment possible here. 
 
