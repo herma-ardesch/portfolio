@@ -46,12 +46,13 @@ CPE <-
     CPE_aut %>% mutate(category = "Authentic"),
     CPE_mod %>% mutate(category = "Modern"),
   )
+
 tempo_gg <- CPE %>% ggplot(aes(x = tempo)) + 
- geom_histogram(binwidth = 8, color = "grey80", fill = "deepskyblue4") +
+ geom_histogram(binwidth = 8, color = "white", fill = "deepskyblue4") +
   facet_wrap(~category) +
   labs(title = "Differences in tempo of authentic vs. modern performances", size = 16
-  )
-
+  ) +
+  theme(rect = element_blank())
 
 ggplotly(tempo_gg)
 
@@ -75,7 +76,8 @@ As much as 11 of the total of 45 movements are played in that same tempo of arou
 mood_gg <- CPE %>% 
   ggplot(aes(x = valence, y = energy, color = category)) +
   geom_jitter() + geom_smooth() +
-  labs(title = "Different moods in authentic vs. modern performances")
+  labs(title = "Different moods in authentic vs. modern performances") +
+  theme(rect = element_blank())
 
 ggplotly(mood_gg)
 
