@@ -1,7 +1,7 @@
 ---
 title: "C.P.E. Bach"
 author: "Herma Ardesch"
-date: "19-2-2021"
+date: "24-2-2021"
 output: 
   flexdashboard::flex_dashboard:
    storyboard: true
@@ -77,12 +77,11 @@ mood_gg <- CPE %>%
   ggplot(aes(x = valence, y = energy, color = category)) +
   geom_jitter() + geom_smooth() +
   labs(title = "Different moods in authentic vs. modern performances") +
-  theme(rect = element_blank())
+  theme(rect = element_blank()) 
 
 ggplotly(mood_gg)
 
 ```
-
 > Source: Spotify API
 
 ***
