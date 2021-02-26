@@ -27,7 +27,7 @@ library(plotly)
 
 ***
 
-The harpsichord outliers in the previous plot (mood features) deserve extra attemtion. Let's compare the timbre of the harpsichord to that of the piano in two Self-Similarity Matrices (SSMs). An SSM compares a track to itself, resulting in a squared visual representation, mirrored in the diagonal. These SSMs focus on timbre.
+The harpsichord outliers in the previous plot (mood features) deserve extra attention. Let's compare the timbre of the harpsichord to that of the piano in two Self-Similarity Matrices (SSMs). An SSM compares a track to itself, resulting in a squared visual representation, mirrored in the diagonal. These SSMs focus on timbre.
 
 Both SSMs show a similar structure: the diagonal lines parallel to the central diagonal represent comparable repetitions, the yellow lines show novelties in structure. The checkerboard pattern is clearer in the piano version. This may be caused by Markinova playing it in a very steady tempo, almost mechanical, accented primarily by subtle dynamics and rather short caesuras. The mechanism of the harpsichord doesn't allow for dynamics, so Antalffi uses agogic accentuation. His accentuation is much stronger and his caesuras are longer than Markinova's: this high expressivity might account for the blurrier lines of the harpsichord SSM.
 
