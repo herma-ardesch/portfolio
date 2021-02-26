@@ -1,7 +1,7 @@
 ---
 title: "C.P.E. Bach"
 author: "Herma Ardesch"
-date: "24-2-2021"
+date: "25-2-2021"
 output: 
   flexdashboard::flex_dashboard:
    storyboard: true
@@ -11,13 +11,41 @@ output:
 
 ## Authentic vs. Modern Performances of C.P.E. Bach's music
 
-### **Why C.P.E. Bach?** Discover more about the background of this portfolio.
-
 ```{r}
+
+library(tidyverse)
+library(spotifyr)
+library(compmus)
+library(plotly)
 
 ```
 
-> 
+### **Comparing timbres** of an Allegro di Molto of a Keyboard Sonata played on harpsichord vs. the same movement played on piano.
+
+
+![comparing timbres](/2021 lopende zaken/studie/data/portfolio/SSMs.jpg)
+
+***
+
+The harpsichord outliers in the previous plot (mood features) deserve extra attemtion. Let's compare the timbre of the harpsichord to that of the piano in two Self-Similarity Matrices (SSMs). An SSM compares a track to itself, resulting in a squared visual representation, mirrored in the diagonal. These SSMs focus on timbre.
+
+Both SSMs show a similar structure: the diagonal lines parallel to the central diagonal represent comparable repetitions, the yellow lines show novelties in structure. The checkerboard pattern is clearer in the piano version. This may be caused by Markinova playing it in a very steady tempo, almost mechanical, accented primarily by subtle dynamics and rather short caesuras. The mechanism of the harpsichord doesn't allow for dynamics, so Antalffi uses agogic accentuation. His accentuation is much stronger and his caesuras are longer than Markinova's: this high expressivity might account for the blurrier lines of the harpsichord SSM.
+
+Although it is difficult to analyze the timbre based on these two SSM's, they look similar in structure, but different in performance. Of course the mechanism of the harpsichord, giving it a metallic sound also plays an important role in these timbre analyses.
+
+### **Comparing pitches** of an Andante from a Trio Sonata for Flute, Violin and Basso Continuo in authentic and modern performances.
+
+![comparing pitches](/2021 lopende zaken/studie/data/portfolio/chromagram pitches.jpg)
+
+***
+
+These two chromagrams represent two performancese of the Andante from the Trio Sonata for flute, violin and basso continuo, Wg 143, on the left performed on authentic instruments by Le Nouveau Quatuor vs. a modern performance on the right, played by Batiasvili, Pahud, Klinger and Koffer. 
+
+A chromagram shows the pitches of the track as you can see on the y-axis. This Trio Sonata is written in B-Minor, containing the following  notes: b, c-sharp, d, e, f-sharp, g, a. The triad b - d - f-sharp defines the basic identity of this key. In a chromagram you can usually identify the basic key identity by the lines that contain more yellow, although modulations of course accentuate other notes and C.P.E. Bach is well-known for his sudden key-changes.
+
+The right chromagram shows this identity pretty nicely, although th E-line also has a lot of yellow. But more important is that you see on the left chromagram that the lines shift a semitone downwards. This shows the lower pitch in which authentic instruments play, which is more or less a semitone lower than the modern concert pitch. So the difference in pitch is nicely identified by Spotify!
+
+### **Why C.P.E. Bach?** Discover more about the background of this portfolio. 
 
 #### **The music of Carl Philipp Emanuel Bach** ####
 
@@ -33,11 +61,6 @@ However, I expect that since the inception of the authentic performance practice
 ### Authentic performances show a greater **diversity in tempo** than modern performances. 
 
 ```{r}
-
-library(tidyverse)
-library(spotifyr)
-library(compmus)
-library(plotly)
 
 CPE_aut <- get_playlist_audio_features("", "2PmIxISPPF4ymvoa3bvCrh")
 CPE_mod <- get_playlist_audio_features("", "0F83MSl8bV2AxL2JNDTGew")
@@ -77,7 +100,7 @@ mood_gg <- CPE %>%
   ggplot(aes(x = valence, y = energy, color = category)) +
   geom_jitter() + geom_smooth() +
   labs(title = "Different moods in authentic vs. modern performances") +
-  theme(rect = element_blank()) 
+  theme(rect = element_blank())
 
 ggplotly(mood_gg)
 
