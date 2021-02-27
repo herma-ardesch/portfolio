@@ -33,7 +33,7 @@ Both SSMs show a similar structure: the diagonal lines parallel to the central d
 
 Although it is difficult to analyze the timbre based on these two SSM's, they look different. The penetrating sound of the harpsichord with its plucked strings versus the rounder, warmer sound of the piano also result in visual timbre differences.
 
-### **Comparing pitches** of an Andante from a Trio Sonata for Flute, Violin and Basso Continuo in authentic and modern performances.
+### Chromagrams clearly show **different pitches** in Andante from a Trio Sonata performed on authentic vs. modern instruments.
 
 ![comparing pitches](/2021 lopende zaken/studie/data/portfolio/chromagram pitches.jpg)
 
