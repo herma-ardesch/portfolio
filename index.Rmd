@@ -41,9 +41,9 @@ Although it is difficult to analyze the timbre based on these two SSM's, they lo
 
 These two chromagrams represent two performancese of the Andante from the Trio Sonata for flute, violin and basso continuo, Wq 143, on the left performed on authentic instruments by Le Nouveau Quatuor vs. a modern performance on the right, played by Batiashvili, Pahud, Klinger and Koffer. 
 
-A chromagram shows the pitches of the track as you can see on the y-axis. This Trio Sonata is written in B-Minor, containing the following  notes: b, c-sharp, d, e, f-sharp, g, a. The triad b - d - f-sharp defines the basic identity of this key. In a chromagram you can usually identify the basic key identity by the lines that contain more yellow, although modulations of course accentuate other notes and C.P.E. Bach is well-known for his sudden key-changes.
+A chromagram shows the pitches of the track as you can see on the y-axis. This Trio Sonata is written in B-Minor, consisting of the notes b, c-sharp, d, e, f-sharp, g, a. The triad b - d - f-sharp defines the basic identity of this key. In a chromagram you can usually identify the basic key identity by the lines that contain more yellow, although modulations of course accentuate other notes and C.P.E. Bach is well-known for his sudden key-changes.
 
-The right chromagram shows the B-Minor identity pretty nicely, although th E-line also has a lot of yellow. But more important is that you see on the left chromagram that the lines shift a semitone downwards. This shows the lower pitch in which authentic instruments play, which is more or less a semitone lower than the modern concert pitch. So the difference in pitch is nicely identified by Spotify!
+The right chromagram shows the B-Minor identity clearly, although the e-line (the subdominant) also stands out. More important is that you see on the left chromagram that the lines shift a semitone downwards. This shows the lower pitch in which authentic instruments play: more or less a semitone lower than the modern concert pitch. So the difference in pitch is nicely identified by Spotify!
 
 ### **Why C.P.E. Bach?** Discover more about the background of this portfolio. 
 
