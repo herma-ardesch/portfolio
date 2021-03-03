@@ -1,7 +1,7 @@
 ---
 title: "C.P.E. Bach"
 author: "Herma Ardesch"
-date: "27-2-2021"
+date: "3-3-2021"
 output: 
   flexdashboard::flex_dashboard:
    storyboard: true
@@ -27,7 +27,7 @@ library(plotly)
 
 ***
 
-The harpsichord outliers in the previous plot (mood features) deserve extra attention. Let's compare the timbre of the harpsichord to that of the piano in two Self-Similarity Matrices (SSMs). An SSM compares a track to itself, resulting in a visual representation mirrored on the diagonal. These SSMs focus on timbre.
+The harpsichord outliers in the previous plot (mood features) deserve extra attention. Let's compare the timbre of the harpsichord to that of the piano in two Self-Similarity Matrices (SSMs) of the Allegro di Molto. An SSM compares a track to itself, resulting in a visual representation mirrored on the diagonal. These SSMs focus on timbre.
 
 Both SSMs show a similar structure: the diagonal lines parallel to the central diagonal represent comparable repetitions, the yellow lines show novelties in structure. The checkerboard pattern is clearer and more homogenous in the piano version. This may be caused by Markinova playing it in a steady tempo, almost mechanical, accented primarily by subtle dynamics and rather short caesuras. The mechanism of the harpsichord doesn't allow for dynamics, so Antalffi uses strong agogic accentuation and longer caesuras than Markinova's: Antalffi's high expressivity and his faster performance might account for the blurrier lines of the harpsichord SSM.
 
@@ -163,7 +163,7 @@ compmus_long_distance(
 
 C.P.E. Bach's Flute Concerto in A, Wq 168, is also available as a Cello Concerto, Wq 172. This chromagram shows the second movement, a Largo con Sordini, Mesto, so a slow piece. They are performed by Amsterdam Baroque with Konrad Hünteler on flute and by the Bach Collegium Japan with Hidemi Suzuki on cello. Amsterdam Baroque plays this movement in 6:43 minutes - the Bach Collegium Japan takes a much slower tempo: 8:33 minutes. 
 
-This chromagram is made using the Dynamic Time-Warping technique to align both versions: a great help if you want to compare various performances. You can see by the longer x-axis that the Bach Collegium Japan plays much slower, resulting in a rectangular chromagram.
+This chromagram is made using the Dynamic Time-Warping technique (DTW), using Manhattan normalization and Aitchison distance to align both versions. DTW is a great help if you want to compare various performances. You can see by the longer x-axis that the Bach Collegium Japan plays much slower, resulting in a rectangular chromagram.
 
 From the bottom left corner to the upper right corner you see a line, showing the warping path. A straight line shows that both movements are well aligned. When you look close, you see a small discontinuation of the line towards the end of the movement. This is caused by a cadenza: the flute plays a short cadenza of 16 seconds and the cello plays a more extensive cadenza of 32 seconds - there is no alignment possible here. 
 
