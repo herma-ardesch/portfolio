@@ -21,25 +21,19 @@ library(plotly)
 ```
 
 
-### **NEW** Let's put **Spotify's chord and key analyses** to the test!
+### Let's put **Spotify's chord and key analyses** to the test!
 
 ![chord analysis](/2021 lopende zaken/studie/data/portfolio/chordograms.jpg)
 
 
 ***
 
-Analysis TODO
+The Adagio from Triosonata Wq 143 from the previous tab (different pitches) is used here in the modern performance. This is a relatively short and slow piece, because C.P.E. Bach is well-known for his capricious harmonic changes, so it might be hard enough!
 
-### NEW** 
+The upper left chordogram is the most detailed one here: chords are taken on measure level to show that they do change often - although a beat level would definitely show more changes! The first measure in the score starts in Bm, goes to C#m7, to F#m and back to Bm on the first beat of the second measure. It looks like Spotify averages the first measure by analyzing it as an A7 chord, which shares c# - e - g with the C#m7 chord. Also on  section level the Spotify analysis remains fuzzy: it gets lost in chord changes and inversions.
 
-```{r}
+The keygrams are also unclear except for one clear F#m key in the second section. This is the part where the violin enters and takes over the theme of the flute, now in the dominant. Here Spotify takes the complete section as the F#m key, the dominant of the original Bm key, so basically this is correct. But all the incidentals, chromatic loops and key-changes obviously are too much for Spotify. 
 
-```
-
-
-***
-
-Analysis
 
 ### **Why C.P.E. Bach?** Discover more about the background of this portfolio. 
 
@@ -124,13 +118,13 @@ Both SSMs show a similar structure: the diagonal lines parallel to the central d
 
 Although it is difficult to analyze the timbre based on these two SSM's, they look different. The penetrating sound of the harpsichord with its plucked strings versus the rounder, warmer sound of the piano also result in visual timbre differences.
 
-### Chromagrams clearly show **different pitches** in Andante from a Trio Sonata performed on authentic vs. modern instruments.
+### Chromagrams clearly show **different pitches** in Adagio from a Trio Sonata performed on authentic vs. modern instruments.
 
 ![comparing pitches](/2021 lopende zaken/studie/data/portfolio/chromagram pitches.jpg)
 
 ***
 
-These two chromagrams represent two performancese of the Andante from the Trio Sonata for flute, violin and basso continuo, Wq 143, on the left performed on authentic instruments by Le Nouveau Quatuor vs. a modern performance on the right, played by Batiashvili, Pahud, Klinger and Koffer. 
+These two chromagrams represent two performancese of the Adagio from the Trio Sonata for flute, violin and basso continuo, Wq 143, on the left performed on authentic instruments by Le Nouveau Quatuor vs. a modern performance on the right, played by Batiashvili, Pahud, Klinger and Koffer. 
 
 A chromagram shows the pitches of the track as you can see on the y-axis. This Trio Sonata is written in B-Minor, consisting of the notes b, c-sharp, d, e, f-sharp, g, a. The triad b - d - f-sharp defines the basic identity of this key. In a chromagram you can usually identify the basic key identity by the lines that contain more yellow, although modulations of course accentuate other notes and C.P.E. Bach is well-known for his sudden key-changes.
 
