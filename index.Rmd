@@ -32,7 +32,7 @@ The Adagio from Triosonata Wq 143 from the previous tab (different pitches) is u
 
 The upper left chordogram is the most detailed one here: chords are taken on measure level to show that they do change often - although a beat level would definitely show more changes! The first measure in the score starts in Bm, goes to C#m7, to F#m and back to Bm on the first beat of the second measure. It looks like Spotify averages the first measure by analyzing it as an A7 chord, which shares c# - e - g with the C#m7 chord. Also on  section level the Spotify analysis remains fuzzy: it gets lost in chord changes and inversions.
 
-The keygrams are also unclear except for one clear F#m key in the second section. This is the part where the violin enters and takes over the theme of the flute, now in the dominant. Here Spotify takes the complete section as the F#m key, the dominant of the original Bm key, so basically this is correct. But all the incidentals, chromatic loops and key-changes obviously are too much for Spotify. 
+The keygrams are also unclear except for one clear F#m key in the second section. This is the part where the violin enters and takes over the theme of the flute, now in the dominant. Here Spotify takes the complete section as the F#m key, the dominant of the original Bm key, so basically this is correct. But all the accidentals, chromatic runs and key-changes obviously are too much for Spotify. 
 
 
 ### **Why C.P.E. Bach?** Discover more about the background of this portfolio. 
