@@ -1,7 +1,7 @@
 ---
 title: "C.P.E. Bach"
 author: "Herma Ardesch"
-date: "3-3-2021"
+date: "4-3-2021"
 output: 
   flexdashboard::flex_dashboard:
    storyboard: true
@@ -20,30 +20,26 @@ library(plotly)
 
 ```
 
-### **Comparing timbres** of an Allegro di Molto of a Keyboard Sonata played on harpsichord vs. the same movement played on piano.
 
+### **NEW** Let's put **Spotify's chord and key analyses** to the test!
 
-![comparing timbres](/2021 lopende zaken/studie/data/portfolio/SSMs.jpg)
+![chord analysis](/2021 lopende zaken/studie/data/portfolio/chordograms.jpg)
+
 
 ***
 
-The harpsichord outliers in the previous plot (mood features) deserve extra attention. Let's compare the timbre of the harpsichord to that of the piano in two Self-Similarity Matrices (SSMs) of the Allegro di Molto. An SSM compares a track to itself, resulting in a visual representation mirrored on the diagonal. These SSMs focus on timbre.
+Analysis TODO
 
-Both SSMs show a similar structure: the diagonal lines parallel to the central diagonal represent comparable repetitions, the yellow lines show novelties in structure. The checkerboard pattern is clearer and more homogenous in the piano version. This may be caused by Markinova playing it in a steady tempo, almost mechanical, accented primarily by subtle dynamics and rather short caesuras. The mechanism of the harpsichord doesn't allow for dynamics, so Antalffi uses strong agogic accentuation and longer caesuras than Markinova's: Antalffi's high expressivity and his faster performance might account for the blurrier lines of the harpsichord SSM.
+### NEW** 
 
-Although it is difficult to analyze the timbre based on these two SSM's, they look different. The penetrating sound of the harpsichord with its plucked strings versus the rounder, warmer sound of the piano also result in visual timbre differences.
+```{r}
 
-### Chromagrams clearly show **different pitches** in Andante from a Trio Sonata performed on authentic vs. modern instruments.
+```
 
-![comparing pitches](/2021 lopende zaken/studie/data/portfolio/chromagram pitches.jpg)
 
 ***
 
-These two chromagrams represent two performancese of the Andante from the Trio Sonata for flute, violin and basso continuo, Wq 143, on the left performed on authentic instruments by Le Nouveau Quatuor vs. a modern performance on the right, played by Batiashvili, Pahud, Klinger and Koffer. 
-
-A chromagram shows the pitches of the track as you can see on the y-axis. This Trio Sonata is written in B-Minor, consisting of the notes b, c-sharp, d, e, f-sharp, g, a. The triad b - d - f-sharp defines the basic identity of this key. In a chromagram you can usually identify the basic key identity by the lines that contain more yellow, although modulations of course accentuate other notes and C.P.E. Bach is well-known for his sudden key-changes.
-
-The right chromagram shows the B-Minor identity clearly, although the e-line (the subdominant) also stands out. More important is that you see on the left chromagram that the lines shift a semitone downwards. This shows the lower pitch in which authentic instruments play: more or less a semitone lower than the modern concert pitch. So the difference in pitch is nicely identified by Spotify!
+Analysis
 
 ### **Why C.P.E. Bach?** Discover more about the background of this portfolio. 
 
@@ -114,6 +110,31 @@ Here we see the valence vs. energy values, resulting in moods per track. Both au
 The authentic performances show a slightly higher energy level, except for the beginning and the middle part. Spotify calculates the energy level using a mix of features and mentions that *'energetic tracks feel fast, loud and noisy'*. The lines crossing in the middle may be caused by the strong preference of tempos around 80 BPM in the modern performances (see: diversity in tempo).
 
 Two outliers in this plot show a high valence and energy level in the two fast movements of the Keyboard Sonata in A-Minor, I Allegro and III Allegro di Molto, played on harpsichord by Gabor Antalffi. Listening to it, he plays them vigorously. But compared to the modern version of these movements played by Ana-Marija Markovina on the piano, the sound of harpsichord vs. piano certainly also plays a role in the Spotify high scores. The harpsichord certainly feels relatively faster, louder and noisier!
+
+### **Comparing timbres** of an Allegro di Molto of a Keyboard Sonata played on harpsichord vs. the same movement played on piano.
+
+
+![comparing timbres](/2021 lopende zaken/studie/data/portfolio/SSMs.jpg)
+
+***
+
+The harpsichord outliers in the previous plot (mood features) deserve extra attention. Let's compare the timbre of the harpsichord to that of the piano in two Timbre Self-Similarity Matrices (SSMs) of the Allegro di Molto. An SSM compares a track to itself, resulting in a visual representation mirrored on the diagonal.
+
+Both SSMs show a similar structure: the diagonal lines parallel to the central diagonal represent comparable repetitions, the yellow lines show novelties in structure. F.i. at 100 (left) and 160 seconds (right) the first section closes with a fermata and a ceasura after which the last section starts. The checkerboard pattern is clearer and more homogenous in the piano version. This may be caused by Markinova playing it in a steady, almost mechanical tempo, accented primarily by subtle dynamics. The mechanism of the harpsichord doesn't allow for dynamics, so Antalffi uses strong agogic accentuation and longer caesuras than Markinova's: Antalffi's high expressivity and his faster performance might account for the blurrier lines of the harpsichord SSM.
+
+Although it is difficult to analyze the timbre based on these two SSM's, they look different. The penetrating sound of the harpsichord with its plucked strings versus the rounder, warmer sound of the piano also result in visual timbre differences.
+
+### Chromagrams clearly show **different pitches** in Andante from a Trio Sonata performed on authentic vs. modern instruments.
+
+![comparing pitches](/2021 lopende zaken/studie/data/portfolio/chromagram pitches.jpg)
+
+***
+
+These two chromagrams represent two performancese of the Andante from the Trio Sonata for flute, violin and basso continuo, Wq 143, on the left performed on authentic instruments by Le Nouveau Quatuor vs. a modern performance on the right, played by Batiashvili, Pahud, Klinger and Koffer. 
+
+A chromagram shows the pitches of the track as you can see on the y-axis. This Trio Sonata is written in B-Minor, consisting of the notes b, c-sharp, d, e, f-sharp, g, a. The triad b - d - f-sharp defines the basic identity of this key. In a chromagram you can usually identify the basic key identity by the lines that contain more yellow, although modulations of course accentuate other notes and C.P.E. Bach is well-known for his sudden key-changes.
+
+The right chromagram shows the B-Minor identity clearly, although the e-line (the subdominant) also stands out. More important is that you see on the left chromagram that the lines shift a semitone downwards. This shows the lower pitch in which authentic instruments play: more or less a semitone lower than the modern concert pitch. So the difference in pitch is nicely identified by Spotify!
 
 
 ### **Dynamic Time-Warping** to easily compare a Concerto in the version for Flute to the same Concerto played on Cello in a much slower tempo. 
