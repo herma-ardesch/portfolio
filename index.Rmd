@@ -21,9 +21,9 @@ library(plotly)
 ```
 
 
-### Let's put **Spotify's chord and key analyses** to the test!
+### Let's put **Spotify's chord and key analysis** to the test!
 
-![chord analysis](/2021 lopende zaken/studie/data/portfolio/chordograms.jpg)
+![chord and key analysis](/2021 lopende zaken/studie/data/portfolio/chordograms.jpg)
 
 
 ***
