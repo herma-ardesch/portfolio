@@ -1,7 +1,7 @@
 ---
 title: "C.P.E. Bach"
 author: "Herma Ardesch"
-date: "6-3-2021"
+date: "7-3-2021"
 output: 
   flexdashboard::flex_dashboard:
    storyboard: true
@@ -133,45 +133,7 @@ The right chromagram shows the B-Minor identity clearly, although the e-line (th
 
 ### **Dynamic Time-Warping** to easily compare a Concerto in the version for Flute to the same Concerto played on Cello in a much slower tempo. 
 
-```{r}
-
-hunteler_Wq168II <-
-  get_tidy_audio_analysis("05swCwLFtyRnOZdR25nP0d") %>%
-  select(segments) %>%
-  unnest(segments) %>%
-  select(start, duration, pitches)
-  
-suzuki_wq172II <- 
-  get_tidy_audio_analysis("6fdcIHXZb7WoUKjlsREe36") %>%
-  select(segments) %>%
-  unnest(segments) %>%
-  select(start, duration, pitches)
-```
-
-
-```{r}
-compmus_long_distance(
-  suzuki_wq172II %>% mutate(pitches = map(pitches, compmus_normalise, "manhattan")),
-  hunteler_Wq168II %>% mutate(pitches = map(pitches, compmus_normalise, "manhattan")),
-  feature = pitches,
-  method = "aitchison"
-) %>%
-  ggplot(
-    aes(
-      x = xstart + xduration / 2,
-      width = xduration,
-      y = ystart + yduration / 2,
-      height = yduration,
-      fill = d
-    )
-  ) +
-  geom_tile() +
-  coord_equal() +
-  labs(x = "Hidemi Suzuki and Bach Collegium Japan", y = "Konrad Hünteler and Amsterdam Baroque") +
-  theme_minimal() +
-  scale_fill_viridis_c(guide = NULL) +
-  labs(title = "Aligning two performances played in a different tempo")
-```
+![dynamic time warping](/2021 lopende zaken/studie/data/portfolio/DTW.jpg)
 
 
 ***
