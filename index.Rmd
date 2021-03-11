@@ -23,7 +23,7 @@ library(plotly)
 
 ### Tempograms
 
-![comparing tempogranms](/2021 lopende zaken/studie/data/portfolio/tempograms.jpg)
+![comparing tempograms](/2021 lopende zaken/studie/data/portfolio/tempograms larger.jpg)
 
 
 ***
