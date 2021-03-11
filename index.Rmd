@@ -21,18 +21,14 @@ library(plotly)
 ```
 
 
-### Let's put **Spotify's chord and key analysis** to the test!
+### Tempograms
 
-![chord and key analysis](/2021 lopende zaken/studie/data/portfolio/chordograms.jpg)
+![comparing tempogranms](/2021 lopende zaken/studie/data/portfolio/tempograms.jpg)
 
 
 ***
 
-The Adagio from the Trio Sonata Wq 143 from the previous tab (different pitches) is used here in the modern performance. I chose a a relatively short, slow piece, because C.P.E. Bach is well-known for his capricious harmonic changes and this might be hard enough!
-
-The upper left chordogram is the most detailed one here: chords are taken on measure level to show their frequent changes - although a beat level would definitely show even more! The first measure **in the score** starts in Bm, goes to C#m with an added #6, to F#m and back to Bm on the first beat of the second measure. It looks like **Spotify** averages the first measure by analyzing it as an A7 chord, which shares c# - e - g with the C#m chord and a - c# with the F#m. Also on  section level the Spotify analysis remains fuzzy and indetermined.
-
-The keygrams are also unclear except for one clear F#m key in the second section. This is the part where the violin enters and takes over the theme of the flute, now in the dominant. Here Spotify takes the complete section as the F#m key, the dominant of the original Bm key, so this is correct. But all the accidentals, chromatic runs and key-changes obviously are too much for Spotify. 
+Analysis 
 
 
 ### **Why C.P.E. Bach?** Discover more about the background of this portfolio. 
@@ -41,7 +37,7 @@ The keygrams are also unclear except for one clear F#m key in the second section
 
 Raised in an environment in which Bach's music was predominant, I learned to play the flute and developed a preference for the music of Carl Philipp Emanuel Bach (1714-1788). His 'Empfindsame Stil' with many unexpected melodic, harmonic and rhythmic turns to symbolize mood swings was very appealing to me. This corpus consists of his flute concertos, cello concertos, some of his harpsichord sonatas and his four symphonies.
 
-I would like to answer the question **Is it possible to detect differences between authentic and modern performances in the music of C.Ph.E. Bach, using the Spotify API?** I expect differences in tempo, interpretation, instrumental sound, pitch, valence and energy between authentic and modern performance practices. Of course I need to give extra attention to the pitch of both groups, since authentic instruments usually play in a different tuning, resulting in a lower pitch. My objective is to make these differences visible.
+I would like to answer the question **Is it possible to detect differences between authentic and modern performances in the music of C.P.E. Bach, using the Spotify API?** I expect differences in tempo, interpretation, instrumental sound, pitch, valence and energy between authentic and modern performance practices. Of course I need to give extra attention to the pitch of both groups, since authentic instruments usually play in a different tuning, resulting in a lower pitch. My objective is to make these differences visible.
 
 Listening to his Flute Concerto in A minor, Wq 166 in the authentic performance of Konrad Hünteler with the Amsterdam Baroque Orchestra (Ton Koopman) and the modern performance of Emmanuel Pahud with the Kammerakademie Potsdam (Trevor Pinnock), you can hear the differences. Both performances take a different tempo, energy level and pitch and the wooden baroque traverso has quite a different sound character, compared to the modern silver or golden Böhm-flute. 
 
@@ -129,6 +125,19 @@ These two chromagrams represent two performancese of the Adagio from the Trio So
 A chromagram shows the pitches of the track as you can see on the y-axis. This Trio Sonata is written in B-Minor, consisting of the notes b, c-sharp, d, e, f-sharp, g, a. The triad b - d - f-sharp defines the basic identity of this key. In a chromagram you can usually identify the basic key identity by the lines that contain more yellow, although modulations of course accentuate other notes and C.P.E. Bach is well-known for his sudden key-changes.
 
 The right chromagram shows the B-Minor identity clearly, although the e-line (the subdominant) also stands out. More important is that you see on the left chromagram that the lines shift a semitone downwards. This shows the lower pitch in which authentic instruments play: more or less a semitone lower than the modern concert pitch. So the difference in pitch is nicely identified by Spotify!
+
+### Let's put **Spotify's chord and key analysis** to the test!
+
+![chord and key analysis](/2021 lopende zaken/studie/data/portfolio/chordograms.jpg)
+
+
+***
+
+The Adagio from the Trio Sonata Wq 143 from the previous tab (different pitches) is used here in the modern performance. I chose a a relatively short, slow piece, because C.P.E. Bach is well-known for his capricious harmonic changes and this might be hard enough!
+
+The upper left chordogram is the most detailed one here: chords are taken on measure level to show their frequent changes - although a beat level would definitely show even more! The first measure **in the score** starts in Bm, goes to C#m with an added #6, to F#m and back to Bm on the first beat of the second measure. It looks like **Spotify** averages the first measure by analyzing it as an A7 chord, which shares c# - e - g with the C#m chord and a - c# with the F#m. Also on  section level the Spotify analysis remains fuzzy and indetermined.
+
+The keygrams are also unclear except for one clear F#m key in the second section. This is the part where the violin enters and takes over the theme of the flute, now in the dominant. Here Spotify takes the complete section as the F#m key, the dominant of the original Bm key, so this is correct. But all the accidentals, chromatic runs and key-changes obviously are too much for Spotify. 
 
 
 ### **Dynamic Time-Warping** to easily compare a Concerto in the version for Flute to the same Concerto played on Cello in a much slower tempo. 
