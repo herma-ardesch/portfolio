@@ -21,7 +21,7 @@ library(plotly)
 ```
 
 
-### **Comparing tempograms** of a Sinfonia fast movement: clear overall tempo with regular vague areas due to hard to detect string note onsets.
+### **Tempograms** of a Sinfonia fast movement show **clear overall tempi with regular vague areas** in authentic and modern performances.
 
 ![comparing tempograms](/2021 lopende zaken/studie/data/portfolio/tempograms larger.jpg)
 
