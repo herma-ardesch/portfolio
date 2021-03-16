@@ -21,18 +21,16 @@ library(plotly)
 ```
 
 
-### **Tempograms** of a Sinfonia fast movement show **clear overall tempi with regular vague areas** in authentic and modern performances.
+### NEW TAB
 
-![comparing tempograms](/2021 lopende zaken/studie/data/portfolio/tempograms larger.jpg)
+```{r}
 
+```
 
 ***
 
-The tempogram of the authentic performance of a Presto from the Sinfonia in D-major played by The English concert is compared to that of the modern performance by Musikcollegium Winterthur. Overall the authentic performance takes a slightly slower tempo of 120 BPM, whereas the modern performance is played at 126 BPM, as shown by the yellow lines on the tempograms.
+Analysis
 
-The tempograms show the structure of the movement. Interesting in the structure is that both tempograms have a vague, vertical column in the A, A1, B and B1 sections, in which it is difficult to estimate the tempo; the first one is marked as 'strings'. In the tempo curve you see that note onsets are hard to detect here, because only strings (without a high amplitude attack phase) are playing here in lower tempo and dynamics. Each of these columns has a long rest before, after and in the middle of it. This rest lasts 3-5 counts (in the 3/8 meter). So the accented downbeat is 'missing': this might be regarded as a so-called 'loud rest'. These rests seem to cause the peaks on the tempo curve.
-
-Apart from these slower, less loud and more reflective parts in this fast movement, Spotify does a good job in estimating the tempo.
 
 
 ### **Why C.P.E. Bach?** Discover more about the background of this portfolio. 
@@ -48,7 +46,6 @@ Listening to his Flute Concerto in A minor, Wq 166 in the authentic performance 
 Links to the [playlist used for authentic performances](https://open.spotify.com/playlist/2PmIxISPPF4ymvoa3bvCrh?si=UQbGeBYpRmSKUpqAj1W_ow) and the [playlist used for modern performances.](https://open.spotify.com/playlist/0F83MSl8bV2AxL2JNDTGew?si=n_uQMkPtSTG9tQ3JuYgJ0w)
 
 
-***
 
 ![](/2021 lopende zaken/studie/data/portfolio/pics CPE.jpg) 
 
@@ -87,6 +84,19 @@ The overall tempo of authentic performances in this corpus ranges from 62 to 176
 
 As much as 11 of the total of 45 movements are played in that same tempo of around 80 BPM in the modern performances, against 4 in the authentic performances. Based on the comparison of these 45 tracks, you could say that authentic performances show a greater variety in tempo than modern performances.
 
+### **Tempograms** of a Presto show **clear overall tempi** with **regular vague areas** in authentic and modern performances.
+
+![comparing tempograms](/2021 lopende zaken/studie/data/portfolio/tempograms larger.jpg)
+
+
+***
+
+The tempogram of the authentic performance of a Presto from the Sinfonia in D-major played by The English concert is compared to that of the modern performance by Musikcollegium Winterthur. Overall the authentic performance takes a slightly slower tempo of 120 BPM, whereas the modern performance is played at 126 BPM, as shown by the yellow lines on the tempograms.
+
+The tempograms show the structure of the movement. Interesting in the structure is that both tempograms have a vague, vertical column in the A, A1, B and B1 sections, in which it is difficult to estimate the tempo; the first one is marked as 'strings'. In the tempo curve you see that note onsets are hard to detect here, because only strings (without a high amplitude attack phase) are playing here in lower tempo and dynamics. Each of these columns has a long rest before, after and in the middle of it. This rest lasts 3-5 counts (in the 3/8 meter). So the accented downbeat is 'missing': this might be regarded as a so-called 'loud rest'. These rests seem to cause the peaks on the tempo curve.
+
+Apart from these slower, less loud and more reflective parts in this fast movement, Spotify does a good job in estimating the tempo.
+
 
 ### **Spotify mood features** show that authentic performances can sound relatively  **'fast, loud and noisy!'**. 
 
@@ -111,7 +121,7 @@ The authentic performances show a slightly higher energy level, except for the b
 
 Two outliers in this plot show a high valence and energy level in the two fast movements of the Keyboard Sonata in A-Minor, I Allegro and III Allegro di Molto, played on harpsichord by Gabor Antalffi. Listening to it, he plays them vigorously. But compared to the modern version of these movements played by Ana-Marija Markovina on the piano, the sound of harpsichord vs. piano certainly also plays a role in the Spotify high scores. The harpsichord certainly feels relatively faster, louder and noisier!
 
-### **Comparing timbres** of an Allegro di Molto of a Keyboard Sonata played on harpsichord vs. the same movement played on piano.
+### **Comparing timbres** of an Allegro di Molto of a Keyboard Sonata played on **harpsichord vs. piano.**
 
 
 ![comparing timbres](/2021 lopende zaken/studie/data/portfolio/SSMs.jpg)
@@ -150,7 +160,7 @@ The upper left chordogram is the most detailed one here: chords are taken on mea
 The keygrams are also unclear or incorrect, except for one clear F#m key in the second section. This is the part where the violin enters and takes over the theme of the flute, now in the dominant. Here Spotify takes the complete section as the F#m key, the dominant of the original Bm key, so this is correct. But all the accidentals, chromatic runs and key-changes obviously are too much for Spotify. 
 
 
-### **Dynamic Time-Warping** to easily compare a Concerto in the version for Flute to the same Concerto played on Cello in a much slower tempo. 
+### **Dynamic Time-Warping** to compare a Concerto in the versions for Flute to the version for Cello, played in a **much slower tempo.** 
 
 ![dynamic time warping](/2021 lopende zaken/studie/data/portfolio/DTW.jpg)
 
