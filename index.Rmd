@@ -1,7 +1,7 @@
 ---
 title: "C.P.E. Bach"
 author: "Herma Ardesch"
-date: "16-3-2021"
+date: "18-3-2021"
 output: 
   flexdashboard::flex_dashboard:
    storyboard: true
@@ -16,22 +16,44 @@ output:
 library(tidyverse)
 library(spotifyr)
 library(compmus)
+get_conf_mat <- function(fit) {
+  outcome <- .get_tune_outcome_names(fit)
+  fit %>% 
+    collect_predictions() %>% 
+    conf_mat(truth = outcome, estimate = .pred_class)
+}  
+
+get_pr <- function(fit) {
+  fit %>% 
+    conf_mat_resampled() %>% 
+    group_by(Prediction) %>% mutate(precision = Freq / sum(Freq)) %>% 
+    group_by(Truth) %>% mutate(recall = Freq / sum(Freq)) %>% 
+    ungroup() %>% filter(Prediction == Truth) %>% 
+    select(class = Prediction, precision, recall)
+}  
 library(plotly)
+library(tidymodels)
+library(kknn)
+library(C50)
+library(randomForest)
+library(ggdendro)
 
 ```
 
 
-### NEW TAB
+### **Training Spotify** to classify features with even more precision!
 
-```{r}
-
-```
+![classification and Prediction](/2021 lopende zaken/studie/data/portfolio/classification and prediction.jpg)
 
 ***
 
-Analysis
+In the previous tabs we showed visualisations, based on the Spotify API. Now let's find out if Spotify can classify this corpus according to the categories authentic or modern performance. For this purpose, we combined both authentic (A) and modern (M) playlists and asked Spotify to classify each performance. Not an easy task, because the playlists contain a variety of works, ranging from chamber music to symphonies!
 
+First we tried to find out the most important features Spotify uses for this purpose and found that all twelve timbre features were on the top of the list to classify the performance. So using the timbre features, a prediction was calculated of how Spotify would perform - you find this prediction in the confusion matrix. Then we divided the works into five parts, thus training Spotify to perform better in each test-run. 
 
+The calculated **precision** of the results was as follows: The first run resulted in a score of **0.86 (A)** vs. **0.85 (M)**, followed by a score of **0.86 (A)** vs. **0.86 (M)**, then a score of **0.88 (A)** vs. **0.83(!) (M)** and a last score of **0.89 (A)** vs. **0.87 (M)**.
+
+Although the number of tests is limited, the precision is promising and it looks like Spotify is learning to identify performances with more precision! The plot shows two timbre components that played an important role in this task.
 
 ### **Why C.P.E. Bach?** Discover more about the background of this portfolio. 
 
@@ -64,8 +86,9 @@ CPE <-
 tempo_gg <- CPE %>% ggplot(aes(x = tempo)) + 
  geom_histogram(binwidth = 8, color = "white", fill = "deepskyblue4") +
   facet_wrap(~category) +
-  labs(title = "Differences in tempo of authentic vs. modern performances", size = 16
+  labs(title = "Differences in Tempo of Authentic vs. Modern Performances", size = 16
   ) +
+  theme_minimal() +
   theme(rect = element_blank())
 
 ggplotly(tempo_gg)
@@ -91,7 +114,7 @@ As much as 11 of the total of 45 movements are played in that same tempo of arou
 
 The tempogram of the authentic performance of a Presto from the Sinfonia in D-major played by The English concert is compared to that of the modern performance by Musikcollegium Winterthur. Overall the authentic performance takes a slightly slower tempo of 120 BPM, whereas the modern performance is played at 126 BPM, as shown by the yellow lines on the tempograms.
 
-The tempograms show the structure of the movement. Interesting in the structure is that both tempograms have a vague, vertical column in the A, A1, B and B1 sections, in which it is difficult to estimate the tempo; the first one is marked as 'strings'. In the tempo curve you see that note onsets are hard to detect here, because only strings (without a high amplitude attack phase) are playing here in lower tempo and dynamics. Each of these columns has a long rest before, after and in the middle of it. This rest lasts 3-5 counts (in the 3/8 meter). So the accented downbeat is 'missing': this might be regarded as a so-called 'loud rest'. These rests seem to cause the peaks on the tempo curve.
+The tempograms show the structure of the movement. Interesting in the structure is that both tempograms have a vague, vertical column in the A, A1, B and B1 sections, in which it is difficult to estimate the tempo; the first one is marked as 'strings'. In the tempo curve you see that note onsets are hard to detect here, because only strings (without a high amplitude attack phase) are playing here in lower tempo and dynamics. Each of these columns has a long rest before, after and in the middle of it. This rest lasts 3-5 beats (in the 3/8 meter). So the accented downbeat is 'missing': this might be regarded as a so-called 'loud rest'. These rests seem to cause the peaks on the tempo curve.
 
 Apart from these slower, less loud and more reflective parts in this fast movement, Spotify does a good job in estimating the tempo.
 
