@@ -47,7 +47,7 @@ library(ggdendro)
 
 ***
 
-In the previous tabs we showed visualisations, based on the Spotify API. Now let's find out if Spotify can classify this corpus according to the categories authentic or modern performance. For this purpose, we combined both authentic (A) and modern (M) playlists and asked Spotify to classify each performance. Not an easy task, because the playlists contain a variety of works, ranging from chamber music to symphonies!
+In the previous tabs we showed visualisations, based on the Spotify API. Now let's find out if Spotify can classify the works in this corpus according to the categories authentic (A) or modern (M) performance. Not an easy task, because the playlists contain a variety of works, ranging from chamber music to symphonies!
 
 First we tried to find out the most important features Spotify uses for this purpose and found that all twelve timbre features were on the top of the list to classify the performance. So using the timbre features, a prediction was calculated of how Spotify would perform - you find this prediction in the confusion matrix. Then we divided the works into five parts, thus training Spotify to perform better in each test-run. 
 
