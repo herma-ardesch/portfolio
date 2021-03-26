@@ -41,19 +41,7 @@ library(ggdendro)
 ```
 
 
-### **Training Spotify** to classify features with even more precision!
 
-![Classification and Prediction](/2021 lopende zaken/studie/data/portfolio/classification and prediction.jpg)
-
-***
-
-In the previous tabs we showed visualisations, based on the Spotify API. Now let's find out if Spotify can classify the works in this corpus according to the categories authentic (A) or modern (M) performance. Not an easy task, because the playlists contain a variety of works, ranging from chamber music to symphonies!
-
-First we tried to find out the most important features Spotify uses for this purpose and found that all twelve timbre features were on the top of the list to classify the performance. So using the timbre features, a prediction was calculated of how Spotify would perform - you find this prediction in the confusion matrix. Then we divided the works into five parts, thus training Spotify to perform better in each test-run. 
-
-The calculated **precision** of the results was as follows: The first run resulted in a score of **0.86 (A)** vs. **0.85 (M)**, followed by a score of **0.86 (A)** vs. **0.86 (M)**, then a score of **0.88 (A)** vs. **0.83(!) (M)** and a last score of **0.89 (A)** vs. **0.87 (M)**.
-
-Although the number of tests is limited, the precision is promising and it looks like Spotify is learning to identify performances with more precision! The plot shows two timbre components that played an important role in this task.
 
 ### **Why C.P.E. Bach?** Discover more about the background of this portfolio. 
 
@@ -65,9 +53,12 @@ I would like to answer the question **Is it possible to detect differences betwe
 
 Listening to his Flute Concerto in A minor, Wq 166 in the authentic performance of Konrad Hünteler with the Amsterdam Baroque Orchestra (Ton Koopman) and the modern performance of Emmanuel Pahud with the Kammerakademie Potsdam (Trevor Pinnock), you can hear the differences. Both performances take a different tempo, energy level and pitch and the wooden baroque traverso has quite a different sound character, compared to the modern silver or golden Böhm-flute. However, I expect that since the inception of the authentic performance practice over half a century ago, both authentic and modern performances have grown closer to each other, because of improved replicas of authentic instruments on the one hand and a greater versatility of instrumentalists playing both authentic and modern versions of their instrument. 
 
+Links to the <a href="https://open.spotify.com/playlist/2PmIxISPPF4ymvoa3bvCrh?si=UQbGeBYpRmSKUpqAj1W_ow" target="_blank"> playlist used for authentic performances</a> and the <a href="https://open.spotify.com/playlist/0F83MSl8bV2AxL2JNDTGew?si=n_uQMkPtSTG9tQ3JuYgJ0w" target="_blank"> playlist used for modern performances.</a>
+
 Links to the [playlist used for authentic performances](https://open.spotify.com/playlist/2PmIxISPPF4ymvoa3bvCrh?si=UQbGeBYpRmSKUpqAj1W_ow) and the [playlist used for modern performances.](https://open.spotify.com/playlist/0F83MSl8bV2AxL2JNDTGew?si=n_uQMkPtSTG9tQ3JuYgJ0w)
 
 ![](/2021 lopende zaken/studie/data/portfolio/pics CPE.jpg) 
+
 
 
 
@@ -126,7 +117,8 @@ Apart from these slower, less loud and more reflective parts in this fast moveme
 mood_gg <- CPE %>% 
   ggplot(aes(x = valence, y = energy, color = category)) +
   geom_jitter() + geom_smooth() +
-  labs(title = "Different moods in authentic vs. modern performances") +
+  labs(title = "Different Moods in Authentic vs. Modern Performances") +
+  theme_minimal() +
   theme(rect = element_blank())
 
 ggplotly(mood_gg)
@@ -194,10 +186,36 @@ This chromagram is made using the Dynamic Time-Warping technique (DTW), using Ma
 
 From the bottom left corner to the upper right corner you see a line, showing the warping path. A straight line shows that both movements are well aligned. When you look close, you see a small discontinuation of the line towards the end of the movement. This is caused by a cadenza: the flute plays a short cadenza of 16 seconds and the cello plays a more extensive cadenza of 32 seconds - there is no alignment possible here. 
 
-### **Conclusions - TO DO: adjust title depending on other visualisations**.
+
+### **Training Spotify** with the **RandomForest Model** to classify features with even more precision!
+
+![Classification and Prediction](/2021 lopende zaken/studie/data/portfolio/classification and prediction.jpg)
+
+***
+
+The previous tabs showed visualisations, based on the Spotify API. Now let's find out if Spotify can classify the works in this corpus according to the categories authentic (A) or modern (M) performance. Not an easy task, because the playlists contain a variety of works, ranging from chamber music to symphonies!
+
+First we tried to find out the most important features Spotify uses for this classification task and found that all twelve timbre features were on the top of the list. So using these timbre features, a prediction was calculated - you find this prediction in the confusion matrix. Then the complete corpus was divided into five parts, using the RandomForest Model to train Spotify to perform better in each run. 
+
+The calculated **precision** of the results was as follows: The first run resulted in a (correct) score of **86% (A)** vs. **85% (M)**, followed by a score of **86% (A)** vs. **86% (M)**, then a score of **88% (A)** vs. **83%(!) (M)** and a last score of **89% (A)** vs. **87% (M)**.
+
+Although the number of cross-validation runs is limited, the precision is promising and it looks like Spotify is learning to classify performances with more precision! The plot shows two timbre components that played an important role in this task.
+
+
+### **Overview and Conclusion** - Spotify API audio retrieval also useful for **classical music!**
 
 >
 
-#### **Conclusions etc.** ####
+#### **Overview of Findings and Conclusion** ####
 
-Enter bodytext
+In this portfolio two playlists of each 45 performances of C.P.E. Bach's works were compared: one playlist with performances on authentic instruments and the second playlist consisting of the same pieces performed on modern instruments. Comparisons were made using the Spotify API. I expected to find differences in pitch, tempo, timbre, interpretation and mood (valence - energy).
+
+In the visualisations on **playlist level** you can see that tempi in both groups were different, indeed, the most conspicuous difference being a greater variation of tempo in the authentic performances. I also found a greater variation in mood (valence - energy) in the authentic performances - a very important aspect, because C.P.E. Bach instructed performers of his music *'to be moved themselves, in order to transfer the emotions expressed in the music to the audience'* (quote from *'Versuch über die Wahre Art das Clavier zu spielen'*, C.P.E. Bach). 
+
+On **track level** I found Spotify nicely identifying the lower pitch authentic instruments use in chromagrams. Two outliers in mood were analyzed in two Trimbre Self Similarity Matrices. They not only showed that the harpsichord's relative loudness results in quite a different timbre than that of the piano, but also that the different mechanics require a different interpretation technique. Tempograms and a short tempo curve of two individual tracks were compared and showed a similar structure, but slight differences in interpretation. The only features that Spotify did not identify correctly were key and chord analyses. However, for this purpose we only used the 24 minor and major chord and key templates to match the audio. Since C.P.E. Bach uses many, often unexpected harmonic turns that are far more complicated than the templates used, this is not surprising. This might however be a research topic to explore further in a machine-learning study!
+
+A bit beside the research question, but helpful for musicians who wish to switch between two different performances and the score, I added a Dynamic Time Warping plot, in which two performances are aligned. Since Dynamic Time Warping is sensitive to differences in tuning, I used two different versions of the authentic playlist for this purpose as a bonus. Finally, I was nicely surprised by the promising precision of the Spotify API in the classification of performances and the possibility to improve this further by training! 
+
+The **external validity** of this research has two aspects. C.P.E. Bach's 'Empfindsame Stil' represents the short transition of two style periods: from baroque to classicism. This limits his music to a relatively short period in time and thus the external validity of his music genre is also rather limited. But the research question focused on **comparing authentic performances to modern performances**. This comparison has a much broader scope than C.P.E. Bach's music. Especially because the Spotify API does a relatively good job to classify the two performance styles, the external validity of this research aspect is of greater importance and so this study ánd the Spotify API used might be useful for anyone comparing authentic to modern performances.
+
+Concluding, I learned that the Spotify API is a great help to retrieve audio information on several levels, also for classical music. Visualizing these data in R helped me to understand better what is happening in a musical performance!
