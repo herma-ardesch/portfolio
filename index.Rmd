@@ -1,7 +1,7 @@
 ---
 title: "C.P.E. Bach"
 author: "Herma Ardesch"
-date: "19-3-2021"
+date: "27-3-2021"
 output: 
   flexdashboard::flex_dashboard:
    storyboard: true
@@ -55,8 +55,6 @@ Listening to his Flute Concerto in A minor, Wq 166 in the authentic performance 
 
 Links to the <a href="https://open.spotify.com/playlist/2PmIxISPPF4ymvoa3bvCrh?si=UQbGeBYpRmSKUpqAj1W_ow" target="_blank"> playlist used for authentic performances</a> and the <a href="https://open.spotify.com/playlist/0F83MSl8bV2AxL2JNDTGew?si=n_uQMkPtSTG9tQ3JuYgJ0w" target="_blank"> playlist used for modern performances.</a>
 
-Links to the [playlist used for authentic performances](https://open.spotify.com/playlist/2PmIxISPPF4ymvoa3bvCrh?si=UQbGeBYpRmSKUpqAj1W_ow) and the [playlist used for modern performances.](https://open.spotify.com/playlist/0F83MSl8bV2AxL2JNDTGew?si=n_uQMkPtSTG9tQ3JuYgJ0w)
-
 ![](/2021 lopende zaken/studie/data/portfolio/pics CPE.jpg) 
 
 
@@ -103,11 +101,11 @@ As much as 11 of the total of 45 movements are played in that same tempo of arou
 
 ***
 
-The tempogram of the authentic performance of a Presto from the Sinfonia in D-major played by The English concert is compared to that of the modern performance by Musikcollegium Winterthur. Overall the authentic performance takes a slightly slower tempo of 120 BPM, whereas the modern performance is played at 126 BPM, as shown by the yellow lines on the tempograms.
+The cyclic tempogram of the authentic performance of a Presto from the Sinfonia in D-major played by The English concert is compared to that of the modern performance by Musikcollegium Winterthur. Overall, the authentic performance takes a slightly slower tempo of 120 BPM, whereas the modern performance is played at 126 BPM, as shown by the yellow lines on the tempograms.
 
-The tempograms show the structure of the movement. Interesting in the structure is that both tempograms have a vague, vertical column in the A, A1, B and B1 sections, in which it is difficult to estimate the tempo; the first one is marked as 'strings'. In the tempo curve you see that note onsets are hard to detect here, because only strings (without a high amplitude attack phase) are playing here in lower tempo and dynamics. Each of these columns has a long rest before, after and in the middle of it. This rest lasts 3-5 beats (in the 3/8 meter). So the accented downbeat is 'missing': this might be regarded as a so-called 'loud rest'. These rests seem to cause the peaks on the tempo curve.
+The tempograms also show the structure of the movement. Interesting in the structure is that both tempograms have a vague, vertical column in the A, A1, B and B1 sections, in which it is difficult to estimate the tempo; the first one is marked as 'strings'. In the tempo curve you see that note onsets are hard to detect here, because only strings (without a high amplitude attack phase) play in a lower tempo and lower dynamics. Each of these columns has a long rest before, after and in the middle of it. The rests last 3-5 beats (in the 3/8 meter). They seem to cause spurious peaks on the tempo curve, similar to the high peaks at the beginning of each performance.
 
-Apart from these slower, less loud and more reflective parts in this fast movement, Spotify does a good job in estimating the tempo.
+Apart from the slower, less loud and more reflective parts in this fast movement, Spotify does a good job in estimating the tempo ánd showing the structure.
 
 
 ### **Spotify mood features** show that authentic performances can sound relatively  **'fast, loud and noisy!'**. 
@@ -117,7 +115,7 @@ Apart from these slower, less loud and more reflective parts in this fast moveme
 mood_gg <- CPE %>% 
   ggplot(aes(x = valence, y = energy, color = category)) +
   geom_jitter() + geom_smooth() +
-  labs(title = "Different Moods in Authentic vs. Modern Performances") +
+  labs(title = "Different Moods in Authentic vs. Modern Performances", colour = "Category") +
   theme_minimal() +
   theme(rect = element_blank())
 
@@ -128,11 +126,11 @@ ggplotly(mood_gg)
 
 ***
 
-Here we see the valence vs. energy values, resulting in moods per track. Both authentic and modern performances range in mood from the lower left 'sad' quadrant to the middle of the lower right 'calm' quadrant. This genre will never reach the upper right 'happy' quadrant (energy level 0.5 - 1.0), although its valence (negative - positive) uses the full range.
+Here we see valence and energy values, resulting in moods per track. Both authentic and modern performances range in mood from the lower left 'sad' quadrant to the middle of the lower right 'calm' quadrant. This genre will never reach the upper right 'happy' quadrant (energy level 0.5 - 1.0), although the valence  (negative - positive) of authentic performances uses the full range.
 
-The authentic performances show a slightly higher energy level, except for the beginning and the middle part. Spotify calculates the energy level using a mix of features and mentions that *'energetic tracks feel fast, loud and noisy'*. The lines crossing in the middle may be caused by the strong preference of tempos around 80 BPM in the modern performances (see: diversity in tempo).
+The authentic performances show a slightly higher energy level, except for the beginning and the middle part. Spotify calculates the energy level using a mix of features and mentions that *'energetic tracks feel fast, loud and noisy'*. The lines crossing in the middle may be caused by the strong preference of tempi around 80 BPM in the modern performances (see: diversity in tempo).
 
-Two outliers in this plot show a high valence and energy level in the two fast movements of the Keyboard Sonata in A-Minor, I Allegro and III Allegro di Molto, played on harpsichord by Gabor Antalffi. Listening to it, he plays them vigorously. But compared to the modern version of these movements played by Ana-Marija Markovina on the piano, the sound of harpsichord vs. piano certainly also plays a role in the Spotify high scores. The harpsichord certainly feels relatively faster, louder and noisier!
+Two outliers in this plot show a high valence and energy level in the two fast movements of the Keyboard Sonata in A-Minor, I-Allegro and III-Allegro di Molto, played on harpsichord by Gabor Antalffi. Listening to it, he plays them vigorously. But compared to the modern version of these movements played by Ana-Marija Markovina on the piano, the sound of harpsichord vs. piano certainly also plays a role in the Spotify high scores. The harpsichord certainly feels relatively faster, louder and noisier!
 
 ### **Comparing timbres** of an Allegro di Molto of a Keyboard Sonata played on **harpsichord vs. piano.**
 
@@ -143,9 +141,9 @@ Two outliers in this plot show a high valence and energy level in the two fast m
 
 The harpsichord outliers in the previous plot (mood features) deserve extra attention. Let's compare the timbre of the harpsichord to that of the piano in two Timbre Self-Similarity Matrices (SSMs) of the Allegro di Molto. An SSM compares a track to itself, resulting in a visual representation mirrored on the diagonal.
 
-Both SSMs show a similar structure: the diagonal lines parallel to the central diagonal represent comparable repetitions, the yellow lines show novelties in structure. F.i. at 100 (left) and 160 seconds (right) the first section closes with a fermata and a caesura after which the last section starts. The checkerboard pattern is clearer and more homogenous in the piano version. This may be caused by Markinova playing it in a steady, almost mechanical tempo, accented primarily by subtle dynamics. The mechanism of the harpsichord doesn't allow for dynamics, so Antalffi uses strong agogic accentuation and longer caesuras than Markinova's: Antalffi's high expressivity and his faster performance might account for the blurrier lines of the harpsichord SSM.
+Both SSMs show a similar structure: the diagonal lines parallel to the central diagonal represent comparable repetitions, the yellow lines show novelties in structure. F.i. at 100 (left) and 160 seconds (right) the first section closes with a fermata and a caesura after which the last section starts. The checkerboard pattern of the piano version is clearer and more homogenous. This may be caused by Markinova playing it in a steady, almost mechanical tempo, accented primarily by subtle dynamics. The mechanism of the harpsichord doesn't allow for dynamics, so Antalffi uses strong agogic accentuation and longer caesuras than Markinova's: Antalffi's high expressivity and his faster performance might account for the blurrier lines of the harpsichord SSM.
 
-Although it is difficult to analyze the timbre based on these two SSM's, they look different. The penetrating sound of the harpsichord with its plucked strings versus the rounder, warmer sound of the piano also result in visual timbre differences.
+Although it is difficult to analyze the timbre based on these two SSMs, they look different. The penetrating sound of the harpsichord with its plucked strings versus the rounder, warmer sound of the piano also result in visual timbre differences.
 
 ### **Different pitches** of authentic vs. modern performances clearly visible in **chromagrams** from Trio Sonata.
 
@@ -193,9 +191,9 @@ From the bottom left corner to the upper right corner you see a line, showing th
 
 ***
 
-The previous tabs showed visualisations, based on the Spotify API. Now let's find out if Spotify can classify the works in this corpus according to the categories authentic (A) or modern (M) performance. Not an easy task, because the playlists contain a variety of works, ranging from chamber music to symphonies!
+The previous tabs showed visualisations, based on the Spotify API. Now let's find out if Spotify can classify the works of this corpus in the right category of authentic (A) or modern (M) performance. Not an easy task, because the playlists contain a variety of works, ranging from chamber music to symphonies!
 
-First we tried to find out the most important features Spotify uses for this classification task and found that all twelve timbre features were on the top of the list. So using these timbre features, a prediction was calculated - you find this prediction in the confusion matrix. Then the complete corpus was divided into five parts, using the RandomForest Model to train Spotify to perform better in each run. 
+First we tried to find out the most important features Spotify uses for this classification task and found that all twelve timbre features were on top of the list. So using these timbre features, a prediction was calculated - you find this prediction in the confusion matrix. Then the complete corpus was divided into five parts, using the RandomForest Model to train Spotify to perform better in each run. 
 
 The calculated **precision** of the results was as follows: The first run resulted in a (correct) score of **86% (A)** vs. **85% (M)**, followed by a score of **86% (A)** vs. **86% (M)**, then a score of **88% (A)** vs. **83%(!) (M)** and a last score of **89% (A)** vs. **87% (M)**.
 
@@ -210,12 +208,14 @@ Although the number of cross-validation runs is limited, the precision is promis
 
 In this portfolio two playlists of each 45 performances of C.P.E. Bach's works were compared: one playlist with performances on authentic instruments and the second playlist consisting of the same pieces performed on modern instruments. Comparisons were made using the Spotify API. I expected to find differences in pitch, tempo, timbre, interpretation and mood (valence - energy).
 
-In the visualisations on **playlist level** you can see that tempi in both groups were different, indeed, the most conspicuous difference being a greater variation of tempo in the authentic performances. I also found a greater variation in mood (valence - energy) in the authentic performances - a very important aspect, because C.P.E. Bach instructed performers of his music *'to be moved themselves, in order to transfer the emotions expressed in the music to the audience'* (quote from *'Versuch über die Wahre Art das Clavier zu spielen'*, C.P.E. Bach). 
+In the visualisations on **playlist level** you can see that tempi in both groups were different indeed, the most conspicuous difference being a greater variation of tempo in the authentic performances. I also found a greater variation in mood (valence - energy) in the authentic performances - a very important aspect, because C.P.E. Bach instructed performers of his music *'to be moved themselves, in order to transfer the emotions expressed in the music to the audience'* (quote from *'Versuch über die Wahre Art das Clavier zu spielen'*, C.P.E. Bach). 
 
-On **track level** I found Spotify nicely identifying the lower pitch authentic instruments use in chromagrams. Two outliers in mood were analyzed in two Trimbre Self Similarity Matrices. They not only showed that the harpsichord's relative loudness results in quite a different timbre than that of the piano, but also that the different mechanics require a different interpretation technique. Tempograms and a short tempo curve of two individual tracks were compared and showed a similar structure, but slight differences in interpretation. The only features that Spotify did not identify correctly were key and chord analyses. However, for this purpose we only used the 24 minor and major chord and key templates to match the audio. Since C.P.E. Bach uses many, often unexpected harmonic turns that are far more complicated than the templates used, this is not surprising. This might however be a research topic to explore further in a machine-learning study!
+On **track level** two tempograms and short tempo curves of two individual tracks were compared. They showed not only the tempi, but also the structures of the compared works. In two chromagrams Spotify nicely identified the lower pitch authentic instruments use, compared to modern instruments. Two outliers in the mood plot were further analyzed in two timbre Self Similarity Matrices. They not only showed that the harpsichord's relative loudness results in quite a different timbre than that of the piano, but also that the different mechanics require a different interpretation technique. 
 
-A bit beside the research question, but helpful for musicians who wish to switch between two different performances and the score, I added a Dynamic Time Warping plot, in which two performances are aligned. Since Dynamic Time Warping is sensitive to differences in tuning, I used two different versions of the authentic playlist for this purpose as a bonus. Finally, I was nicely surprised by the promising precision of the Spotify API in the classification of performances and the possibility to improve this further by training! 
+The only features that Spotify did not identify correctly were key and chord analyses. However, for this purpose I only used the 24 minor and major chord and key templates to match the audio. Since C.P.E. Bach uses many, often unexpected harmonic turns that are far more complicated than the templates used, this is not surprising. This might however be a research topic to explore further in a machine-learning study to familiarize the computer with the capricious harmonic idiom of this genre.
+
+A bit beside the research question, but helpful for musicians who wish to switch between two different performances and the score, I added a Dynamic Time Warping plot which aligned two performances as a bonus. Since Dynamic Time Warping is sensitive to differences in tuning, I used two versions of the same piece with quite different durations from the authentic playlist. Finally, I was nicely surprised by the promising precision of the Spotify API in the classification of performances and the possibility to improve this further by training! 
 
 The **external validity** of this research has two aspects. C.P.E. Bach's 'Empfindsame Stil' represents the short transition of two style periods: from baroque to classicism. This limits his music to a relatively short period in time and thus the external validity of his music genre is also rather limited. But the research question focused on **comparing authentic performances to modern performances**. This comparison has a much broader scope than C.P.E. Bach's music. Especially because the Spotify API does a relatively good job to classify the two performance styles, the external validity of this research aspect is of greater importance and so this study ánd the Spotify API used might be useful for anyone comparing authentic to modern performances.
 
-Concluding, I learned that the Spotify API is a great help to retrieve audio information on several levels, also for classical music. Visualizing these data in R helped me to understand better what is happening in a musical performance!
+Concluding, I learned that the Spotify API can be a great help to retrieve audio information on several levels, also for classical music! Visualizing these data in R helped me to understand better what is happening in a musical performance.
