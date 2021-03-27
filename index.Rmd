@@ -1,5 +1,5 @@
 ---
-title: "C.P.E. Bach"
+title: "C.P.E. Bach - Portfolio Computational Musicology"
 author: "Herma Ardesch"
 date: "27-3-2021"
 output: 
@@ -47,7 +47,7 @@ library(ggdendro)
 
 #### **The music of Carl Philipp Emanuel Bach** ####
 
-Raised in an environment in which Bach's music was predominant, I learned to play the flute and developed a preference for the music of Carl Philipp Emanuel Bach (1714-1788). His 'Empfindsame Stil' with many unexpected melodic, harmonic and rhythmic turns to symbolize mood swings was very appealing to me. This corpus consists of his flute concertos, cello concertos, some of his harpsichord sonatas and his four symphonies.
+Raised in an environment in which Bach's music was predominant, I learned to play the flute and developed a preference for the music of Carl Philipp Emanuel Bach (1714-1788). His 'Empfindsame Stil' with many unexpected melodic, harmonic and rhythmic turns to symbolize mood swings was (and still is) very appealing to me. This corpus consists of his flute concertos, cello concertos, some of his harpsichord sonatas and his four symphonies.
 
 I would like to answer the question **Is it possible to detect differences between authentic and modern performances in the music of C.P.E. Bach, using the Spotify API?** I expect differences in tempo, interpretation, instrumental sound, pitch, valence and energy between authentic and modern performances. Of course, I need to give extra attention to the pitch of both groups, since authentic instruments usually play in a different tuning, resulting in a lower pitch. My objective is to make these differences **visible in graphs.**
 
@@ -92,7 +92,7 @@ ggplotly(tempo_gg)
 
 The overall tempo of authentic performances in this corpus ranges from 62 to 176 BPM, the tempo of modern performances had a slightly lower range: from 62 to 168 BPM. However, as you see on the histogram, the tempo of the authentic performances has a more even, normal distribution, whereas that of the modern performances shows a high peak around 80 BPM. 
 
-As much as 11 of the total of 45 movements are played in that same tempo of around 80 BPM in the modern performances, against 4 in the authentic performances. Based on the comparison of these 45 tracks, you could say that authentic performances show a greater variety in tempo than modern performances.
+As much as 11 of the total of 45 movements are played in that same tempo of around 80 BPM in the modern performances, against 4 in the authentic performances. Based on the **comparison of these 45 tracks,** you could say that **authentic performances show a greater variety in tempo than modern performances**.
 
 ### **Tempograms** of a Presto show **clear overall tempi** with **regular vague areas** in authentic and modern performances.
 
@@ -103,7 +103,7 @@ As much as 11 of the total of 45 movements are played in that same tempo of arou
 
 The cyclic tempogram of the authentic performance of a Presto from the Sinfonia in D-major played by The English concert is compared to that of the modern performance by Musikcollegium Winterthur. Overall, the authentic performance takes a slightly slower tempo of 120 BPM, whereas the modern performance is played at 126 BPM, as shown by the yellow lines on the tempograms.
 
-The tempograms also show the structure of the movement. Interesting to see is that both tempograms have a vague, vertical column in the A, A1, B and B1 sections, in which it is difficult to estimate the tempo: The first one is marked as 'strings'. In the tempo curve you see that note onsets are hard to detect here, because only strings (without a high amplitude attack phase) play in a lower tempo and lower dynamics. Each of these columns has a long rest before, after and in the middle of it. The rests last 3-5 beats (in the 3/8 meter). They seem to cause spurious peaks on the tempo curve, similar to the high peaks at the beginning of each performance.
+The tempograms also show the **structure of the movement.** Interesting to see is that both tempograms have a vague, vertical column in the A, A1, B and B1 sections, in which it is difficult to estimate the tempo: The first one is marked as 'strings'. In the tempo curve you see that note onsets are hard to detect here, because only strings (without a high amplitude attack phase) play in a lower tempo and lower dynamics. Each of these columns has a long rest before, after and in the middle of it. The rests last 3-5 beats (in the 3/8 meter). They seem to cause spurious peaks on the tempo curve, similar to the high peaks at the beginning of each performance.
 
 Apart from the slower, less loud and more reflective parts in this fast movement, Spotify does a good job in estimating the tempo ánd showing the structure.
 
@@ -130,7 +130,7 @@ Here we see valence and energy values, resulting in moods per track. Both authen
 
 The authentic performances show a slightly higher energy level, except for the beginning and the middle part. Spotify calculates the energy level using a mix of features and mentions that *'energetic tracks feel fast, loud and noisy'*. The lines crossing in the middle may be caused by the strong preference of tempi around 80 BPM in the modern performances (see: diversity in tempo).
 
-Two outliers in this plot show a high valence and energy level in the two fast movements of the Keyboard Sonata in A-Minor, I Allegro and III Allegro di Molto, played on harpsichord by Gabor Antalffi. Listening to it, he plays them vigorously. But compared to the modern version of these movements played by Ana-Marija Markovina on the piano, the sound of harpsichord vs. piano certainly also plays a role in the Spotify high scores. The harpsichord certainly feels relatively faster, louder and noisier!
+**Two outliers** in this plot show a high valence and energy level in the two **fast movements of the Keyboard Sonata in A-Minor, Wq 57/II** I Allegro and III Allegro di Molto, played on harpsichord by Gabor Antalffi. Listening to it, he plays them vigorously. But compared to the modern version of these movements played by Ana-Marija Markovina on the piano, the sound of harpsichord vs. piano certainly also plays a role in the Spotify high scores. The harpsichord certainly feels relatively faster, louder and noisier!
 
 ### **Comparing timbres** of an Allegro di Molto of a Keyboard Sonata played on **harpsichord vs. piano.**
 
@@ -141,7 +141,7 @@ Two outliers in this plot show a high valence and energy level in the two fast m
 
 The harpsichord outliers in the previous plot (mood features) deserve extra attention. Let's compare the timbre of the harpsichord to that of the piano in two Timbre Self-Similarity Matrices (SSMs) of the Allegro di Molto. An SSM compares a track to itself, resulting in a visual representation mirrored on the diagonal.
 
-Both SSMs show a **similar structure**: The diagonal lines parallel to the central diagonal represent comparable repetitions, the yellow lines show novelties in structure. F.i. at 100 (left) and 160 seconds (right) the first section closes with a fermata and a caesura after which the last section starts. The checkerboard pattern of the piano version is clearer and more homogenous. This may be caused by Markinova playing it in a steady, almost mechanical tempo, accented primarily by subtle dynamics. The mechanism of the harpsichord doesn't allow for dynamics, so Antalffi uses strong agogic accentuation and longer caesuras than Markinova's: Antalffi's **high expressivity** and his faster performance might account for the blurrier lines of the harpsichord SSM.
+Both SSMs show a **similar structure**: The diagonal lines parallel to the central diagonal represent comparable repetitions, the yellow lines show novelties in structure. F.i. at 100 (left) and 160 seconds (right) the first section closes with a fermata and a caesura after which the last section starts. The checkerboard pattern of the piano version is clearer and more homogenous. This may be caused by Markinova playing it in a steady, almost mechanical tempo, accented primarily by subtle dynamics. The mechanism of the harpsichord doesn't allow for dynamics, so Antalffi uses strong agogic accentuation and longer caesuras than Markovina's: Antalffi's **high expressivity** and his faster performance might account for the blurrier lines of the harpsichord SSM.
 
 Although it is difficult to analyze the timbre based on these two SSMs, they look different. The penetrating sound of the harpsichord with its plucked strings versus the rounder, warmer sound of the piano also result in visual timbre differences.
 
@@ -178,7 +178,7 @@ The keygrams are also unclear or incorrect, except for one clear F#m key in the 
 
 ***
 
-C.P.E. Bach's Flute Concerto in A, Wq 168, is also available as a Cello Concerto, Wq 172. This chromagram shows the second movement, a Largo con Sordini, Mesto, so a slow piece. They are performed by Amsterdam Baroque with Konrad Hünteler on flute and by the Bach Collegium Japan with Hidemi Suzuki on cello. Amsterdam Baroque plays this movement in 6:43 minutes - the Bach Collegium Japan takes a much slower tempo: 8:33 minutes. 
+C.P.E. Bach's **Flute Concerto in A, Wq 168,** is also available as a **Cello Concerto, Wq 172.** This chromagram shows the second movement, a Largo con Sordini, Mesto, so a slow piece. They are performed by Amsterdam Baroque with Konrad Hünteler on flute and by the Bach Collegium Japan with Hidemi Suzuki on cello. Amsterdam Baroque plays this movement in 6:43 minutes - the Bach Collegium Japan takes a much slower tempo: 8:33 minutes. 
 
 This chromagram is made using the Dynamic Time-Warping technique (DTW), using Manhattan normalization and Aitchison distance to align both versions. DTW is a great help if you want to compare various performances. You can see by the longer x-axis that the Bach Collegium Japan plays much slower, resulting in a rectangular chromagram.
 
@@ -193,9 +193,7 @@ From the bottom left corner to the upper right corner you see a line, showing th
 
 The previous tabs showed visualisations, based on the Spotify API. Now let's find out if Spotify can classify the works of this corpus in the right category of authentic (A) or modern (M) performance. Not an easy task, because the playlists contain a variety of works, ranging from chamber music to symphonies!
 
-First we tried to find out the most important features Spotify uses for this classification task and found that all twelve timbre features were on top of the list. So using these timbre features, a prediction was calculated - you find this prediction in the confusion matrix. Then the complete corpus was divided into five parts, using the RandomForest Model for cross-validation and to train Spotify to perform better in each run. 
-
-The calculated **precision** of the results was as follows:
+First we tried to find out the most important features Spotify uses for this classification task and found that all twelve timbre features were on top of the list. So using these timbre features, a prediction was calculated - you find this prediction in the confusion matrix. Then the complete corpus was divided into five parts, using the RandomForest Model for cross-validation and to train Spotify to perform better in each run. The calculated **precision** of the results was as follows:
 
 | 
 | ------------- | ------------- |
@@ -204,7 +202,7 @@ The calculated **precision** of the results was as follows:
 | 86%           | 86%           |
 | 88%           | 83% (!)       |
 | 89%           | 87%           |
-
+|  
 
 Although the number of cross-validation runs is limited, the precision is promising and it looks like Spotify can learn to classify performances with more precision! 
 
