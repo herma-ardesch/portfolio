@@ -214,7 +214,7 @@ The **scatterplot shows two timbre components** that played an important role in
 
 >
 
-#### **Overview of Findings, External Validity and Conclusion** ####
+#### **Overview of Findings, Validity and Conclusion** ####
 
 In this portfolio two playlists of each 45 performances of C.P.E. Bach's works were compared: one playlist with performances on authentic instruments and the second playlist consisting of the same pieces performed on modern instruments. Comparisons were made using the Spotify API. I expected to find differences in pitch, tempo, timbre, interpretation and mood (valence - energy).
 
@@ -222,9 +222,9 @@ In the visualisations on **playlist level** you can see that tempi in both group
 
 On **track level** two tempograms and short tempo curves of two individual tracks were compared. They showed not only the tempi, but also the structures of the compared works. In two chromagrams Spotify nicely identified the lower pitch authentic instruments use, compared to modern instruments. Two outliers in the mood plot were further analyzed in two timbre Self Similarity Matrices. They not only showed that the harpsichord's relative loudness results in quite a different timbre than that of the piano, but also that the different mechanics require a different interpretation technique. 
 
-The only analyses that Spotify did not perform correctly were key and chord identification. However, for this purpose I only used the minor, major and dominant seventh chord and key templates to match the audio. Since C.P.E. Bach uses many, often unexpected harmonic turns that are more complicated than the templates used, this is not surprising. Key and chord analysis of this specific style might however be a research topic to explore further, for instance in a machine-learning study to familiarize the computer with the capricious harmonic idiom of C.P.E. Bach.
+The only analyses that Spotify did not perform correctly were key and chord identification. However, for this purpose I only used the minor, major and dominant seventh chord and key templates to match the audio. Since C.P.E. Bach uses many, often unexpected harmonic turns that are more complicated than the templates used, this is not surprising. It negatively effects the **internal validity** for the key and chord analyses in this portfolio. This specific style might however be a research topic to explore further, for instance in a machine-learning study to familiarize the computer with the capricious harmonic idiom of C.P.E. Bach.
 
-A bit beside the research question, but a basic technique used in apps that allow for switching between different performances and the score, I added a Dynamic Time Warping plot as a bonus. For this purpose I used two versions of the same piece with a quite different duration from the authentic playlist and showed how DTW can align them. Finally, I was nicely surprised by the promising precision of the Spotify API in the classification of performances and the possibility to improve this even further by training! 
+A bit beside the research question, but a basic technique used in apps that allow for switching between different performances and the score, I added a Dynamic Time Warping plot as a bonus. For this purpose I used two versions of the same piece with a quite different duration from the authentic playlist and showed how DTW can align them. Finally, I was nicely surprised by the promising precision of the Spotify API in the classification of performances. Although authentic and modern performances have grown closer together over the years, the Spotify API seems to be able to classify them with good precision, although the remaining errors do ask for a human expert check to improve **construct validity.** Of course classification could also be further improved by machine-learning!
 
 The **external validity** of this research has two aspects.
 
