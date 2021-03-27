@@ -157,7 +157,7 @@ A chromagram shows the pitches of the track as you can see on the y-axis. This T
 
 The right chromagram shows the B-Minor identity clearly, although the e-line (the subdominant) also stands out. More important is that you see on the left chromagram that the lines **shift a semitone downwards.** This shows the lower pitch in which authentic instruments play: more or less a semitone lower than the modern concert pitch. So the difference in pitch is nicely identified by Spotify!
 
-### Let's put **Spotify's chord and key analysis** to the test!
+### Let's put **Spotify's chord and key analysis** to the test with the original Krumhansl-Schmuckler templates!
 
 ![chord and key analysis](/2021 lopende zaken/studie/data/portfolio/chordograms hr.jpg)
 
@@ -171,7 +171,7 @@ The upper left chordogram is the most detailed one here: chords are taken on mea
 The keygrams are also unclear or incorrect, except for one clear F#m key in the second section. This is the part where the violin enters and takes over the theme of the flute, now in the dominant. Here Spotify takes the complete section as the F#m key, the dominant of the original Bm key, so this is correct. But all the accidentals, chromatic runs and key-changes obviously are too much for Spotify. 
 
 
-### **Dynamic Time-Warping** to compare a Concerto in the versions for Flute to the version for Cello, played in a **much slower tempo.** 
+### **Dynamic Time-Warping** to align a Concerto in the version for Flute to the version for Cello, played in a **much slower tempo.** 
 
 ![dynamic time warping](/2021 lopende zaken/studie/data/portfolio/DTW.jpg)
 
@@ -185,15 +185,15 @@ This chromagram is made using the Dynamic Time-Warping technique (DTW), using Ma
 From the bottom left corner to the upper right corner you see a line, showing the warping path. A straight line shows that both movements are well aligned. When you look close, you see a small discontinuation of the line towards the end of the movement. This is caused by a cadenza: the flute plays a short cadenza of 16 seconds and the cello plays a more extensive cadenza of 32 seconds - there is no alignment possible here. 
 
 
-### **Training Spotify** with the **RandomForest Model** to classify features with even more precision!
+### **Classification** of the corpus by Spotify using the **RandomForest Model** shows promising precision!
 
 ![Classification and Prediction](/2021 lopende zaken/studie/data/portfolio/classification and prediction.jpg)
 
 ***
 
-The previous tabs showed visualisations, based on the Spotify API. Now let's find out if Spotify can classify the works of this corpus in the right category of authentic (A) or modern (M) performance. Not an easy task, because the playlists contain a variety of works, ranging from chamber music to symphonies!
+The previous tabs showed visualisations, based on the Spotify API. Now let's find out if Spotify can classify the works of this corpus in the right category of authentic or modern performances. Not an easy task, considering the variety of works!
 
-First we tried to find out the most important features Spotify uses for this classification task and found that all twelve timbre features were on top of the list. So using these timbre features, a prediction was calculated - you find this prediction in the confusion matrix. Then the complete corpus was divided into five parts, using the RandomForest Model for cross-validation and to train Spotify to perform better in each run. The calculated **precision** of the results was as follows:
+First we looked for the most important features Spotify uses for this classification task and found that all twelve timbre features were on top of the list. Using these twelve timbre features, a prediction was calculated - you find it in the confusion matrix. Then the complete corpus was divided into five parts, using the RandomForest Model for cross-validation and to train Spotify to perform better in each run. The calculated **precision** was:
 
 | 
 | ------------- | ------------- |
@@ -202,7 +202,8 @@ First we tried to find out the most important features Spotify uses for this cla
 | 86%           | 86%           |
 | 88%           | 83% (!)       |
 | 89%           | 87%           |
-|  
+| 
+
 
 Although the number of cross-validation runs is limited, the precision is promising and it looks like Spotify can learn to classify performances with more precision! 
 
@@ -213,7 +214,7 @@ The **scatterplot shows two timbre components** that played an important role in
 
 >
 
-#### **Overview of Findings and Conclusion** ####
+#### **Overview of Findings, External Validity and Conclusion** ####
 
 In this portfolio two playlists of each 45 performances of C.P.E. Bach's works were compared: one playlist with performances on authentic instruments and the second playlist consisting of the same pieces performed on modern instruments. Comparisons were made using the Spotify API. I expected to find differences in pitch, tempo, timbre, interpretation and mood (valence - energy).
 
@@ -221,14 +222,14 @@ In the visualisations on **playlist level** you can see that tempi in both group
 
 On **track level** two tempograms and short tempo curves of two individual tracks were compared. They showed not only the tempi, but also the structures of the compared works. In two chromagrams Spotify nicely identified the lower pitch authentic instruments use, compared to modern instruments. Two outliers in the mood plot were further analyzed in two timbre Self Similarity Matrices. They not only showed that the harpsichord's relative loudness results in quite a different timbre than that of the piano, but also that the different mechanics require a different interpretation technique. 
 
-The only features that Spotify did not identify correctly were key and chord analyses. However, for this purpose I only used the minor, major and dominant seventh chord and key templates to match the audio. Since C.P.E. Bach uses many, often unexpected harmonic turns that are more complicated than the templates used, this is not surprising. This might however be a research topic to explore further in a machine-learning study to familiarize the computer with the capricious harmonic idiom of this genre.
+The only analyses that Spotify did not perform correctly were key and chord identification. However, for this purpose I only used the minor, major and dominant seventh chord and key templates to match the audio. Since C.P.E. Bach uses many, often unexpected harmonic turns that are more complicated than the templates used, this is not surprising. Key and chord analysis of this specific style might however be a research topic to explore further, for instance in a machine-learning study to familiarize the computer with the capricious harmonic idiom of C.P.E. Bach.
 
-A bit beside the research question, but a basic technique used in apps that allow for switching between two different performances and the score, I added a Dynamic Time Warping plot as a bonus. For this purpose I used two versions of the same piece with quite different durations from the authentic playlist and showed how DTW can align them. Finally, I was nicely surprised by the promising precision of the Spotify API in the classification of performances and the possibility to improve this further by training! 
+A bit beside the research question, but a basic technique used in apps that allow for switching between different performances and the score, I added a Dynamic Time Warping plot as a bonus. For this purpose I used two versions of the same piece with a quite different duration from the authentic playlist and showed how DTW can align them. Finally, I was nicely surprised by the promising precision of the Spotify API in the classification of performances and the possibility to improve this even further by training! 
 
 The **external validity** of this research has two aspects.
 
-1. C.P.E. Bach's music represents the **short transition of two style periods: from baroque to classicism.** This makes it a very specific style and limits the music to a relatively short period in time. This has a direct influence on the external validity of the findings in this portfolio: It is not really possible to generalize them, simply because C.P.E. Bach is the most important composer of the 'Empfindsame Stil'. 
+1. C.P.E. Bach's music represents the **short transition of two style periods: from baroque to classicism.** This makes it a very specific style and limits the music to a relatively short period in time. This specificity has a direct influence on the external validity of the findings of the musical style in this portfolio: It is not really possible to generalize them, simply because C.P.E. Bach is the most important composer of the 'Empfindsame Stil'. 
 
 2. The portfolio focused not only on this style, but also on **comparing authentic performances to modern performances**. This comparison has a much broader scope than C.P.E. Bach's music. Especially because the Spotify API does a relatively good job to classify the two performance styles, the external validity of this research aspect is of greater importance and so this study ánd the Spotify API might be useful for anyone comparing authentic to modern performances.
 
-**Concluding**, I was able to research all the differences I expected to find and more using the Spotify API. The resulting graphs in this portfolio give an immediate insight in all the results. Working on this portfolio made me realize that the Spotify API can be a great help to retrieve audio information on several levels, also for classical music! Visualizing these data in R can be a great help to understand better what is happening in a musical performance.
+**Concluding**, I was able to research *more* than the differences I expected to find using the Spotify API. The graphs in this portfolio give an immediate insight in all the results. Working on this portfolio made me realize that the Spotify API can be a great help to retrieve audio information on several levels, also for classical music! Visualizing these data in R can be a great help to easily understand what is happening in a musical performance.
