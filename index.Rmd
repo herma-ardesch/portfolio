@@ -118,11 +118,11 @@ mood_gg <- CPE %>%
   labs(title = "Different Moods in Authentic vs. Modern Performances", colour = "Category") +
   theme_minimal() +
   theme(rect = element_blank())
+mood_gg + annotate(geom = "text", x = 0.75, y = 0.4, label = "Harpsichord Allegros")
 
-ggplotly(mood_gg)
 
 ```
-> Source: Spotify API
+
 
 ***
 
