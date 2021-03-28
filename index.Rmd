@@ -9,7 +9,7 @@ output:
    vertical layout: fill
 ---
 
-## Authentic vs. Modern Performances of C.P.E. Bach's music
+#### Authentic vs. Modern Performances of C.P.E. Bach's music
 
 ```{r}
 
